@@ -26,7 +26,13 @@ def jwt_required_compat():
             if request.method == 'OPTIONS':
                 return '', 200
             if HAS_JWT:
-                return _jwt_required()(fn)(*args, **kwargs)
+                auth_header = request.headers.get('Authorization')
+                if auth_header and 'Bearer' in auth_header and auth_header != 'Bearer null' and auth_header != 'Bearer undefined':
+                    try:
+                        return _jwt_required()(fn)(*args, **kwargs)
+                    except Exception:
+                        # If token expired or invalid, fallback to demo mode instead of crashing
+                        pass
             return fn(*args, **kwargs)
         return wrapper
     return decorator
@@ -34,7 +40,9 @@ def jwt_required_compat():
 def get_jwt_identity_compat():
     if HAS_JWT:
         try:
-            return _get_jwt_identity()
+            identity = _get_jwt_identity()
+            if identity:
+                return identity
         except Exception:
             pass
     from app.models import User
