@@ -231,6 +231,18 @@ import { RouterLink } from '@angular/router';
       color: #E2E8F0;
       font-family: 'Poppins', 'Inter', sans-serif;
       overflow-x: hidden;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(94, 225, 241, 0.3) #0D1B2A;
+    }
+    .landing-wrapper::-webkit-scrollbar {
+      width: 6px;
+    }
+    .landing-wrapper::-webkit-scrollbar-track {
+      background: #0D1B2A;
+    }
+    .landing-wrapper::-webkit-scrollbar-thumb {
+      background: rgba(94, 225, 241, 0.3);
+      border-radius: 3px;
     }
 
     /* ── Nav ── */
