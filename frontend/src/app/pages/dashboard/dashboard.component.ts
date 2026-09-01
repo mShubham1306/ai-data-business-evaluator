@@ -16,9 +16,26 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
           <h2>Welcome back, {{ currentUser?.name || 'there' }} 👋</h2>
           <p class="subtitle">NOVA Decision Intelligence · Real-Time SME Outcome Engine</p>
         </div>
-        <button class="btn btn-primary 3d-btn" (click)="openAddModal()">
-          <span>+ Add Business Profile</span>
-        </button>
+        <div class="header-actions">
+          <!-- Currency Selection Dropdown -->
+          <div class="currency-picker-box">
+            <span class="curr-label">💱 Currency:</span>
+            <select [(ngModel)]="selectedCurrency" (change)="onCurrencyChange()" class="currency-select">
+              <option value="AED">🇦🇪 AED (Dirham)</option>
+              <option value="SAR">🇸🇦 SAR (Riyal)</option>
+              <option value="QAR">🇶🇦 QAR (Riyal)</option>
+              <option value="KWD">🇰🇼 KWD (Dinar)</option>
+              <option value="USD">🇺🇸 USD ($ Dollar)</option>
+              <option value="EUR">🇪🇺 EUR (€ Euro)</option>
+              <option value="INR">🇮🇳 INR (₹ Rupee)</option>
+              <option value="GBP">🇬🇧 GBP (£ Pound)</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary 3d-btn" (click)="openAddModal()">
+            <span>+ Add Business Profile</span>
+          </button>
+        </div>
       </header>
 
       <!-- Trust Layer Status Bar -->
@@ -37,14 +54,14 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
         </div>
       </div>
 
-      <!-- Overview Metric Cards (real data only) -->
+      <!-- Overview Metric Cards (real user data only) -->
       <div class="grid grid-3 mt-4">
         <div class="card stat-card 3d-card">
           <div class="card-glow sky"></div>
           <span class="stat-title">Your Business Profiles</span>
           <h3 class="stat-value">{{ businesses.length }}</h3>
           <span class="stat-meta" *ngIf="businesses.length > 0">Active across NOVA World Model</span>
-          <span class="stat-meta" *ngIf="businesses.length === 0">Add your first business below</span>
+          <span class="stat-meta" *ngIf="businesses.length === 0">Add your business profile to get started</span>
         </div>
 
         <div class="card stat-card 3d-card" [class.highlight-success]="avgHealthScore > 0">
@@ -55,7 +72,7 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
           </h3>
           <h3 class="stat-value text-muted" *ngIf="avgHealthScore === 0">—</h3>
           <span class="stat-meta" *ngIf="avgHealthScore > 0">Based on your business data</span>
-          <span class="stat-meta" *ngIf="avgHealthScore === 0">Upload data to see your score</span>
+          <span class="stat-meta" *ngIf="avgHealthScore === 0">Upload data on Business page to generate</span>
         </div>
 
         <div class="card stat-card 3d-card" [class.highlight-coral]="opportunities > 0">
@@ -80,7 +97,7 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
         <!-- Loading -->
         <div class="empty-state card mt-2" *ngIf="loading">
           <div class="loading-spinner"></div>
-          <p>Loading your businesses...</p>
+          <p>Loading your business profiles...</p>
         </div>
 
         <!-- Businesses grid -->
@@ -89,17 +106,17 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
             <div class="biz-card-header">
               <div>
                 <h4>{{ biz.name }}</h4>
-                <span class="badge mt-1">{{ biz.industry || 'General' }}</span>
+                <span class="badge mt-1">{{ biz.industry || 'General Business' }}</span>
               </div>
-              <span class="currency-tag">{{ biz.currency || 'AED' }}</span>
+              <span class="currency-tag">{{ biz.currency || selectedCurrency }}</span>
             </div>
 
-            <p class="biz-desc">{{ biz.description || 'No description. Click Business Data to add details.' }}</p>
+            <p class="biz-desc">{{ biz.description || 'No description added yet. Click Business Data to add records.' }}</p>
 
             <div class="biz-metrics-row" *ngIf="biz.goals?.target_annual_revenue || biz.goals?.target_margin">
               <div class="mini-metric" *ngIf="biz.goals?.target_annual_revenue">
                 <span class="m-lbl">Target Revenue</span>
-                <span class="m-val">{{ biz.currency || 'AED' }} {{ biz.goals.target_annual_revenue | number:'1.0-0' }}</span>
+                <span class="m-val">{{ biz.currency || selectedCurrency }} {{ biz.goals.target_annual_revenue | number:'1.0-0' }}</span>
               </div>
               <div class="mini-metric" *ngIf="biz.goals?.target_margin">
                 <span class="m-lbl">Target Margin</span>
@@ -108,13 +125,13 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
             </div>
 
             <div class="biz-no-goals" *ngIf="!biz.goals?.target_annual_revenue && !biz.goals?.target_margin">
-              <span class="no-data-hint">📝 Set goals via Business Data page</span>
+              <span class="no-data-hint">📝 Set target goals &amp; upload data on Business Data page</span>
             </div>
 
             <div class="biz-footer mt-3">
               <button class="btn btn-secondary btn-sm" [routerLink]="['/business', biz.id]">📄 Data &amp; Uploads</button>
-              <button class="btn btn-secondary btn-sm" [routerLink]="['/analytics', biz.id]">📈 Analytics &amp; What-If</button>
-              <button class="btn btn-primary btn-sm" [routerLink]="['/copilot', biz.id]">🤖 Copilot &amp; Actions</button>
+              <button class="btn btn-secondary btn-sm" [routerLink]="['/analytics', biz.id]">📈 Analytics &amp; Charts</button>
+              <button class="btn btn-primary btn-sm" [routerLink]="['/copilot', biz.id]">🤖 AI Copilot</button>
             </div>
           </div>
         </div>
@@ -122,8 +139,8 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
         <!-- Empty state -->
         <div class="empty-state card mt-2" *ngIf="businesses.length === 0 && !loading">
           <div class="empty-icon">🏢</div>
-          <h3>No Business Profiles Yet</h3>
-          <p>Create your first business profile to start getting AI-powered insights, forecasts, and decision intelligence.</p>
+          <h3>No Business Profiles Found</h3>
+          <p>Create your business profile to start uploading data, generating forecasts, and simulating strategic decisions.</p>
           <button class="btn btn-primary mt-3" (click)="openAddModal()">+ Create Your First Business</button>
         </div>
       </section>
@@ -141,7 +158,7 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
           <div class="form-row">
             <div class="form-group">
               <label>Business Name <span class="req">*</span></label>
-              <input type="text" [(ngModel)]="newBiz.name" placeholder="e.g. Al Noor Trading LLC" />
+              <input type="text" [(ngModel)]="newBiz.name" placeholder="e.g. Acme Enterprises LLC" />
             </div>
             <div class="form-group">
               <label>Industry <span class="req">*</span></label>
@@ -154,14 +171,16 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
 
           <div class="form-row">
             <div class="form-group">
-              <label>Currency</label>
+              <label>Operating Currency</label>
               <select [(ngModel)]="newBiz.currency">
-                <option value="AED">AED – UAE Dirham</option>
-                <option value="SAR">SAR – Saudi Riyal</option>
-                <option value="QAR">QAR – Qatari Riyal</option>
-                <option value="KWD">KWD – Kuwaiti Dinar</option>
-                <option value="USD">USD – US Dollar</option>
-                <option value="EUR">EUR – Euro</option>
+                <option value="AED">🇦🇪 AED – UAE Dirham</option>
+                <option value="SAR">🇸🇦 SAR – Saudi Riyal</option>
+                <option value="QAR">🇶🇦 QAR – Qatari Riyal</option>
+                <option value="KWD">🇰🇼 KWD – Kuwaiti Dinar</option>
+                <option value="USD">🇺🇸 USD – US Dollar</option>
+                <option value="EUR">🇪🇺 EUR – Euro</option>
+                <option value="INR">🇮🇳 INR – Indian Rupee</option>
+                <option value="GBP">🇬🇧 GBP – British Pound</option>
               </select>
             </div>
             <div class="form-group">
@@ -178,17 +197,17 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
 
           <div class="form-group">
             <label>Business Description</label>
-            <textarea [(ngModel)]="newBiz.description" rows="3" placeholder="Briefly describe your business, products/services, and market..."></textarea>
+            <textarea [(ngModel)]="newBiz.description" rows="3" placeholder="Briefly describe your business, products, services, or market..."></textarea>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label>Target Annual Revenue ({{ newBiz.currency }})</label>
-              <input type="number" [(ngModel)]="newBiz.target_revenue" placeholder="e.g. 5000000" min="0" />
+              <input type="number" [(ngModel)]="newBiz.target_revenue" placeholder="e.g. 1000000" min="0" />
             </div>
             <div class="form-group">
               <label>Target Net Margin (%)</label>
-              <input type="number" [(ngModel)]="newBiz.target_margin" placeholder="e.g. 25" min="0" max="100" />
+              <input type="number" [(ngModel)]="newBiz.target_margin" placeholder="e.g. 30" min="0" max="100" />
             </div>
           </div>
 
@@ -206,71 +225,34 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
     </div>
   `,
   styles: [`
-    .dash-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.75rem;
-    }
+    .dash-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; flex-wrap: wrap; gap: 1rem; }
+    .header-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
 
-    .subtitle {
-      color: var(--slate-gray);
-      font-size: 0.95rem;
-      margin-top: 0.2rem;
-    }
+    .currency-picker-box { display: flex; align-items: center; gap: 0.5rem; background: var(--white); padding: 0.4rem 0.85rem; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 2px 8px rgba(13, 27, 42, 0.05); }
+    .curr-label { font-size: 0.82rem; font-weight: 700; color: var(--deep-navy); }
+    .currency-select { border: none; background: none; font-size: 0.85rem; font-weight: 700; color: var(--deep-navy); cursor: pointer; outline: none; }
 
-    .trust-banner {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      background: var(--white);
-      padding: 0.85rem 1.35rem;
-      border-radius: 12px;
-      box-shadow: var(--shadow-3d);
-      border: 1px solid var(--border-color);
-    }
+    .subtitle { color: var(--slate-gray); font-size: 0.95rem; margin-top: 0.2rem; }
 
-    .trust-pill {
-      font-size: 0.82rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      background: var(--cream);
-      color: var(--deep-navy);
-      border: 1px solid rgba(226, 232, 240, 0.8);
-      transition: all 0.25s ease;
-    }
-    .trust-pill:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(13, 27, 42, 0.08); }
+    .trust-banner { display: flex; gap: 1rem; flex-wrap: wrap; background: var(--white); padding: 0.85rem 1.35rem; border-radius: 12px; box-shadow: var(--shadow-3d); border: 1px solid var(--border-color); }
+    .trust-pill { font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.85rem; border-radius: 20px; background: var(--cream); color: var(--deep-navy); border: 1px solid rgba(226, 232, 240, 0.8); }
     .trust-pill.verified { background: #f0fdf4; color: #14532d; border-color: rgba(34, 197, 94, 0.3); }
     .trust-pill.confidence { background: #eff6ff; color: #1e40af; border-color: rgba(59, 130, 246, 0.3); }
     .trust-pill.llm { background: #faf5ff; color: #6b21a8; border-color: rgba(139, 92, 246, 0.3); }
     .trust-pill.coral { background: #fff1f2; color: #9f1239; border-color: rgba(246, 159, 152, 0.4); }
 
-    .status-dot {
-      width: 9px; height: 9px; border-radius: 50%;
-      &.green { background: var(--success-green); box-shadow: 0 0 8px var(--success-green); }
-      &.blue { background: var(--primary-blue); box-shadow: 0 0 8px var(--primary-blue); }
-      &.purple { background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple); }
-      &.coral { background: var(--coral-pink); box-shadow: 0 0 8px var(--coral-pink); }
-    }
+    .status-dot { width: 9px; height: 9px; border-radius: 50%; }
+    .status-dot.green { background: var(--success-green); box-shadow: 0 0 8px var(--success-green); }
+    .status-dot.blue { background: var(--primary-blue); box-shadow: 0 0 8px var(--primary-blue); }
+    .status-dot.purple { background: var(--accent-purple); box-shadow: 0 0 8px var(--accent-purple); }
+    .status-dot.coral { background: var(--coral-pink); box-shadow: 0 0 8px var(--coral-pink); }
 
-    .stat-card {
-      display: flex; flex-direction: column; gap: 0.4rem; position: relative;
-    }
-    .card-glow {
-      position: absolute; top: -30px; right: -30px; width: 100px; height: 100px;
-      border-radius: 50%; pointer-events: none; filter: blur(25px); opacity: 0.4;
-      &.sky { background: var(--sky-blue); }
-      &.green { background: var(--success-green); }
-      &.coral { background: var(--coral-pink); }
-    }
-    .stat-title {
-      font-size: 0.85rem; color: var(--muted-gray);
-      text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600;
-    }
+    .stat-card { display: flex; flex-direction: column; gap: 0.4rem; position: relative; }
+    .card-glow { position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; border-radius: 50%; pointer-events: none; filter: blur(25px); opacity: 0.4; }
+    .card-glow.sky { background: var(--sky-blue); }
+    .card-glow.green { background: var(--success-green); }
+    .card-glow.coral { background: var(--coral-pink); }
+    .stat-title { font-size: 0.85rem; color: var(--muted-gray); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; }
     .stat-value { font-size: 2.2rem; font-weight: 800; color: var(--deep-navy); }
     .max-val { font-size: 1rem; color: var(--muted-gray); font-weight: 500; }
     .stat-meta { font-size: 0.78rem; color: var(--slate-gray); }
@@ -279,37 +261,16 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
     .text-muted { color: var(--muted-gray); }
 
     .section-title-row { display: flex; justify-content: space-between; align-items: center; }
-    .live-tag {
-      font-size: 0.75rem; font-weight: 700; color: var(--deep-navy);
-      background: var(--sky-blue); padding: 0.25rem 0.75rem; border-radius: 12px;
-      display: flex; align-items: center; gap: 0.4rem;
-      box-shadow: 0 2px 8px rgba(94, 225, 241, 0.4);
-    }
-    .pulse {
-      width: 7px; height: 7px; background: var(--coral-pink); border-radius: 50%;
-      animation: pulseAnim 1.5s infinite;
-    }
-    @keyframes pulseAnim {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(246, 159, 152, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(246, 159, 152, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(246, 159, 152, 0); }
-    }
+    .live-tag { font-size: 0.75rem; font-weight: 700; color: var(--deep-navy); background: var(--sky-blue); padding: 0.25rem 0.75rem; border-radius: 12px; display: flex; align-items: center; gap: 0.4rem; }
+    .pulse { width: 7px; height: 7px; background: var(--coral-pink); border-radius: 50%; animation: pulseAnim 1.5s infinite; }
+    @keyframes pulseAnim { 0% { transform: scale(0.95); } 70% { transform: scale(1); } 100% { transform: scale(0.95); } }
 
     .biz-card { display: flex; flex-direction: column; justify-content: space-between; }
     .biz-card-header { display: flex; justify-content: space-between; align-items: flex-start; }
-    .currency-tag {
-      font-weight: 700; color: var(--deep-navy); background: var(--peach);
-      padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.82rem;
-    }
+    .currency-tag { font-weight: 700; color: var(--deep-navy); background: var(--peach); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.82rem; }
     .biz-desc { margin: 0.85rem 0; font-size: 0.88rem; color: var(--slate-gray); line-height: 1.5; }
-    .biz-metrics-row {
-      display: flex; gap: 1.5rem; background: var(--cream);
-      padding: 0.75rem 1rem; border-radius: 10px; margin-top: 0.5rem;
-    }
-    .biz-no-goals {
-      background: var(--cream); padding: 0.6rem 1rem; border-radius: 8px;
-      margin-top: 0.5rem; font-size: 0.82rem;
-    }
+    .biz-metrics-row { display: flex; gap: 1.5rem; background: var(--cream); padding: 0.75rem 1rem; border-radius: 10px; margin-top: 0.5rem; }
+    .biz-no-goals { background: var(--cream); padding: 0.6rem 1rem; border-radius: 8px; margin-top: 0.5rem; font-size: 0.82rem; }
     .no-data-hint { color: var(--muted-gray); font-style: italic; }
     .mini-metric { display: flex; flex-direction: column; }
     .m-lbl { font-size: 0.72rem; color: var(--muted-gray); text-transform: uppercase; }
@@ -317,93 +278,29 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
     .biz-footer { display: flex; gap: 0.65rem; flex-wrap: wrap; }
     .btn-sm { padding: 0.45rem 0.85rem; font-size: 0.82rem; }
 
-    /* Empty state */
-    .empty-state {
-      text-align: center; padding: 3rem 2rem; display: flex;
-      flex-direction: column; align-items: center; gap: 0.75rem;
-    }
+    .empty-state { text-align: center; padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
     .empty-icon { font-size: 3rem; }
-    .empty-state h3 { color: var(--deep-navy); }
-    .empty-state p { color: var(--muted-gray); max-width: 420px; font-size: 0.92rem; }
-    .loading-spinner {
-      width: 40px; height: 40px; border-radius: 50%;
-      border: 3px solid var(--border-color); border-top-color: var(--coral-pink);
-      animation: spin 0.7s linear infinite;
-    }
+    .loading-spinner { width: 40px; height: 40px; border-radius: 50%; border: 3px solid var(--border-color); border-top-color: var(--coral-pink); animation: spin 0.7s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ── Modal ── */
-    .modal-backdrop {
-      position: fixed; inset: 0; background: rgba(13, 27, 42, 0.65);
-      backdrop-filter: blur(6px); display: flex; align-items: center;
-      justify-content: center; z-index: 1000; padding: 1rem;
-    }
-    .modal-card {
-      background: var(--white); border-radius: 20px; width: 100%;
-      max-width: 680px; max-height: 90vh; overflow-y: auto;
-      box-shadow: 0 30px 60px rgba(13, 27, 42, 0.35);
-    }
-    .modal-header {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color);
-      position: sticky; top: 0; background: var(--white); z-index: 2;
-      border-radius: 20px 20px 0 0;
-    }
-    .modal-header h3 { margin: 0; color: var(--deep-navy); }
-    .modal-close {
-      background: none; border: none; font-size: 1.1rem; cursor: pointer;
-      color: var(--muted-gray); padding: 0.25rem 0.5rem; border-radius: 6px;
-      transition: all 0.2s;
-    }
-    .modal-close:hover { background: var(--cream); color: var(--deep-navy); }
+    .modal-backdrop { position: fixed; inset: 0; background: rgba(13, 27, 42, 0.65); backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 1rem; }
+    .modal-card { background: var(--white); border-radius: 20px; width: 100%; max-width: 680px; max-height: 90vh; overflow-y: auto; box-shadow: 0 30px 60px rgba(13, 27, 42, 0.35); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 2rem; border-bottom: 1px solid var(--border-color); position: sticky; top: 0; background: var(--white); z-index: 2; border-radius: 20px 20px 0 0; }
+    .modal-close { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--muted-gray); padding: 0.25rem 0.5rem; border-radius: 6px; }
     .modal-body { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: 1rem; }
-    .modal-footer {
-      display: flex; justify-content: flex-end; gap: 0.85rem;
-      padding: 1.25rem 2rem; border-top: 1px solid var(--border-color);
-    }
+    .modal-footer { display: flex; justify-content: flex-end; gap: 0.85rem; padding: 1.25rem 2rem; border-top: 1px solid var(--border-color); }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
     .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--deep-navy); }
-    .form-group input, .form-group select, .form-group textarea {
-      padding: 0.65rem 0.85rem; border: 1px solid var(--border-color);
-      border-radius: 8px; font-family: inherit; font-size: 0.9rem;
-      color: var(--deep-navy); background: var(--white); transition: all 0.2s;
-    }
-    .form-group textarea { resize: vertical; min-height: 80px; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-      outline: none; border-color: var(--sky-blue);
-      box-shadow: 0 0 0 3px rgba(94, 225, 241, 0.2);
-    }
+    .form-group input, .form-group select, .form-group textarea { padding: 0.65rem 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 0.9rem; color: var(--deep-navy); background: var(--white); }
     .req { color: var(--coral-pink); }
-    .modal-error {
-      background: #fff1f2; border: 1px solid rgba(246, 159, 152, 0.4);
-      color: var(--coral-pink); padding: 0.75rem 1rem; border-radius: 8px;
-      font-size: 0.85rem;
-    }
-    .spinner {
-      display: inline-block; width: 16px; height: 16px;
-      border: 2px solid rgba(255, 255, 255, 0.3); border-top-color: white;
-      border-radius: 50%; animation: spin 0.6s linear infinite;
-    }
+    .modal-error { background: #fff1f2; border: 1px solid rgba(246, 159, 152, 0.4); color: var(--coral-pink); padding: 0.75rem 1rem; border-radius: 8px; font-size: 0.85rem; }
+    .spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid rgba(255, 255, 255, 0.3); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; }
 
-    /* Responsive Queries */
     @media (max-width: 768px) {
       .dash-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .header-actions { width: 100%; justify-content: space-between; }
-      .stats-grid { grid-template-columns: repeat(2, 1fr); }
-      .business-grid { grid-template-columns: 1fr; }
-      .modal-card { width: 95vw; }
-      .modal-header { padding: 1.1rem 1.25rem; }
-      .modal-body { padding: 1.1rem 1.25rem; }
-      .modal-footer { padding: 1rem 1.25rem; }
-    }
-
-    @media (max-width: 520px) {
-      .stats-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr !important; }
-      .header-actions { flex-direction: column; gap: 0.75rem; }
-      .header-actions button, .header-actions a { width: 100%; text-align: center; }
-      .biz-meta { grid-template-columns: 1fr; }
     }
   `]
 })
@@ -416,6 +313,8 @@ export class DashboardComponent implements OnInit {
   avgHealthScore = 0;
   opportunities = 0;
   currentUser: StoredUser | null = null;
+
+  selectedCurrency = 'AED';
 
   newBiz = this.emptyBiz();
 
@@ -442,12 +341,16 @@ export class DashboardComponent implements OnInit {
     return {
       name: '',
       industry: '',
-      currency: 'AED',
+      currency: this.selectedCurrency || 'AED',
       size: '',
       description: '',
       target_revenue: null as number | null,
       target_margin: null as number | null,
     };
+  }
+
+  onCurrencyChange(): void {
+    this.newBiz.currency = this.selectedCurrency;
   }
 
   loadBusinesses(): void {
@@ -483,7 +386,7 @@ export class DashboardComponent implements OnInit {
     const payload: Partial<Business> = {
       name: this.newBiz.name.trim(),
       industry: this.newBiz.industry,
-      currency: this.newBiz.currency || 'AED',
+      currency: this.newBiz.currency || this.selectedCurrency,
       size: this.newBiz.size || undefined,
       description: this.newBiz.description.trim() || undefined,
       goals: (this.newBiz.target_revenue || this.newBiz.target_margin) ? {
