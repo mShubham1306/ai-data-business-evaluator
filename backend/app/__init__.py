@@ -19,11 +19,8 @@ def create_app(config_name=None):
     # Initialize extensions
     db.init_app(app)
     init_jwt(app)
-    cors_origins = app.config.get('CORS_ORIGINS', ['*'])
-    if '*' in cors_origins or cors_origins == ['*']:
-        CORS(app, resources={r"/api/*": {"origins": "*"}})
-    else:
-        CORS(app, origins=cors_origins)
+    # Always allow all origins so Vercel frontend can reach Render backend
+    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
     
     # Create upload folder
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)

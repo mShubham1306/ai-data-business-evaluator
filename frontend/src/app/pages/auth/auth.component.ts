@@ -503,7 +503,7 @@ export class AuthComponent implements OnInit {
         },
         error: (err) => {
           if (err.status === 0) {
-            this.error = 'Unable to connect to backend server (http://localhost:5000). Please ensure backend is running.';
+            this.error = 'Unable to connect to backend server. The server may be starting up — please wait 30 seconds and try again.';
           } else {
             this.error = err.error?.error || 'Login failed. Please check your email and password.';
           }
@@ -524,7 +524,7 @@ export class AuthComponent implements OnInit {
         },
         error: (err) => {
           if (err.status === 0) {
-            this.error = 'Unable to connect to backend server (http://localhost:5000). Please ensure backend is running.';
+            this.error = 'Unable to connect to backend server. The server may be starting up — please wait 30 seconds and try again.';
           } else {
             this.error = err.error?.error || 'Registration failed. Please try again.';
           }
