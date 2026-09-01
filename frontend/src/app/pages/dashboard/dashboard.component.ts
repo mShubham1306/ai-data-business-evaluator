@@ -385,6 +385,26 @@ import { AuthService, StoredUser } from '../../core/services/auth.service';
       border: 2px solid rgba(255, 255, 255, 0.3); border-top-color: white;
       border-radius: 50%; animation: spin 0.6s linear infinite;
     }
+
+    /* Responsive Queries */
+    @media (max-width: 768px) {
+      .dash-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .header-actions { width: 100%; justify-content: space-between; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .business-grid { grid-template-columns: 1fr; }
+      .modal-card { width: 95vw; }
+      .modal-header { padding: 1.1rem 1.25rem; }
+      .modal-body { padding: 1.1rem 1.25rem; }
+      .modal-footer { padding: 1rem 1.25rem; }
+    }
+
+    @media (max-width: 520px) {
+      .stats-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr !important; }
+      .header-actions { flex-direction: column; gap: 0.75rem; }
+      .header-actions button, .header-actions a { width: 100%; text-align: center; }
+      .biz-meta { grid-template-columns: 1fr; }
+    }
   `]
 })
 export class DashboardComponent implements OnInit {

@@ -154,6 +154,21 @@ interface ChatMessage {
     .msg-text { font-size: 0.9rem; line-height: 1.5; }
     .chat-input-row { display: flex; gap: 0.85rem; }
     .chat-input { flex: 1; padding: 0.85rem 1rem; border: 1px solid var(--border-color); border-radius: 10px; font-family: inherit; }
+
+    /* Responsive Queries */
+    @media (max-width: 992px) {
+      .page-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .copilot-layout { grid-template-columns: 1fr !important; }
+    }
+
+    @media (max-width: 600px) {
+      .chat-messages { height: 260px; padding: 0.85rem; }
+      .msg-bubble { max-width: 95%; }
+      .chat-input-row { flex-direction: column; gap: 0.5rem; }
+      .chat-input-row button { width: 100%; }
+      .opp-header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+      .opp-footer { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
   `]
 })
 export class CopilotComponent implements OnInit {

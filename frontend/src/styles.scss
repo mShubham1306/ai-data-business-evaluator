@@ -289,3 +289,101 @@ input, select, textarea {
   background: var(--coral-pink);
   border-radius: 4px;
 }
+
+/* ==========================================================================
+   GLOBAL RESPONSIVE DESIGN SYSTEM & BREAKPOINT UTILITIES
+   Supports: 320px (Mobile S), 375px/414px (Mobile M/L), 768px (Tablet), 
+             1024px (Laptop), 1440px (Desktop), 1920px+ (4K Ultra-Wide)
+   ========================================================================== */
+
+/* Touch-friendly Minimum Tap Target Height */
+button, .btn, input, select, textarea, a.btn-primary, a.btn-secondary {
+  min-height: 42px;
+}
+
+/* Scrollable Container Wrapper for Tables & Code Trees */
+.table-responsive, .scroll-x {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1rem;
+}
+
+.table-responsive table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+}
+
+/* Universal Image & Visual Scalers */
+img, svg, canvas, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fluid Typography Helpers */
+.fluid-title {
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+.fluid-subtitle {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  line-height: 1.5;
+}
+
+/* Breakpoint 1: Extra Small Mobile Devices (320px - 480px) */
+@media (max-width: 480px) {
+  :root {
+    --radius-card: 12px;
+  }
+
+  html, body {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 1.1rem !important;
+  }
+
+  button, .btn {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.82rem !important;
+    width: 100%;
+  }
+
+  .grid.grid-2, .grid.grid-3, .grid.grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Breakpoint 2: Mobile Devices (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .card {
+    padding: 1.35rem;
+  }
+
+  .grid.grid-3, .grid.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    gap: 1.25rem;
+  }
+}
+
+/* Breakpoint 3: Tablet Devices (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .grid.grid-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Breakpoint 4: Ultra-Wide Screens (1920px+) */
+@media (min-width: 1920px) {
+  .main-content {
+    max-width: 1800px !important;
+  }
+
+  body {
+    font-size: 17px;
+  }
+}

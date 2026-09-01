@@ -208,6 +208,20 @@ import { BusinessService, Business, WorldModel } from '../../core/services/busin
     .margin-badge.high { background: #dcfce7; color: #166534; }
     .text-success { color: var(--success-green); }
     .text-navy { color: var(--deep-navy); }
+
+    /* Responsive Queries */
+    @media (max-width: 768px) {
+      .page-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .biz-grid { grid-template-columns: 1fr !important; }
+      .form-grid { grid-template-columns: 1fr !important; }
+      .wm-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+
+    @media (max-width: 480px) {
+      .dropzone { padding: 1.5rem 1rem; }
+      .wm-stats-grid { grid-template-columns: 1fr !important; }
+      .data-table th, .data-table td { padding: 0.6rem; font-size: 0.8rem; }
+    }
   `]
 })
 export class BusinessComponent implements OnInit {

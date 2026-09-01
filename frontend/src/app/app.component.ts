@@ -21,11 +21,15 @@ import { filter } from 'rxjs/operators';
           </div>
         </div>
 
-        <div class="nav-links" *ngIf="isAuthenticated$ | async">
-          <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-          <a routerLink="/business" routerLinkActive="active">Business Data</a>
-          <a routerLink="/analytics/default" routerLinkActive="active">Analytics &amp; ML</a>
-          <a routerLink="/copilot/default" routerLinkActive="active">Copilot AI</a>
+        <button class="mobile-toggle" *ngIf="isAuthenticated$ | async" (click)="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" [class.mobile-open]="mobileMenuOpen" *ngIf="isAuthenticated$ | async">
+          <a routerLink="/dashboard" routerLinkActive="active" (click)="mobileMenuOpen = false">Dashboard</a>
+          <a routerLink="/business" routerLinkActive="active" (click)="mobileMenuOpen = false">Business Data</a>
+          <a routerLink="/analytics/default" routerLinkActive="active" (click)="mobileMenuOpen = false">Analytics &amp; ML</a>
+          <a routerLink="/copilot/default" routerLinkActive="active" (click)="mobileMenuOpen = false">Copilot AI</a>
 
           <!-- User Avatar + Name chip -->
           <div class="user-chip" *ngIf="currentUser">
@@ -36,7 +40,7 @@ import { filter } from 'rxjs/operators';
             </div>
           </div>
 
-          <button (click)="logout()" class="btn-logout">Logout</button>
+          <button (click)="logout(); mobileMenuOpen = false" class="btn-logout">Logout</button>
         </div>
       </nav>
 
@@ -105,6 +109,25 @@ import { filter } from 'rxjs/operators';
       font-size: 0.72rem;
       color: #5EE1F1;
       font-weight: 500;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #5EE1F1;
+      border-radius: 2px;
+      transition: all 0.3s;
     }
 
     .nav-links {
@@ -213,12 +236,58 @@ import { filter } from 'rxjs/operators';
       max-width: 100%;
       overflow-y: auto;
     }
+
+    /* Media Queries for Navbar & Content */
+    @media (max-width: 1024px) {
+      .navbar { padding: 0.8rem 1.5rem; }
+      .main-content { padding: 1.5rem 1.5rem; }
+    }
+
+    @media (max-width: 880px) {
+      .mobile-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0D1B2A;
+        flex-direction: column;
+        padding: 1.25rem 1.5rem;
+        gap: 1rem;
+        border-bottom: 2px solid #5EE1F1;
+        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+      }
+      .nav-links.mobile-open {
+        display: flex;
+      }
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.65rem;
+      }
+      .user-chip {
+        width: 100%;
+        justify-content: center;
+      }
+      .btn-logout {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar { padding: 0.75rem 1rem; }
+      .nav-brand h1 { font-size: 1.25rem; }
+      .nav-brand p { font-size: 0.65rem; }
+      .main-content { padding: 1rem 0.85rem; }
+    }
   `]
 })
 export class AppComponent implements OnInit {
   isAuthenticated$ = this.authService.isAuthenticated$;
   currentUser: StoredUser | null = null;
   showNav = true;
+  mobileMenuOpen = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 

@@ -416,11 +416,23 @@ import { AuthService } from '../../core/services/auth.service';
     .link-btn:hover { color: #e07870; }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .auth-wrapper { flex-direction: column; }
-      .auth-side { flex: 0 0 auto; border-right: none; border-bottom: 1px solid rgba(94,225,241,0.1); padding: 2rem 1.75rem; }
-      .auth-card { padding: 2rem 1.75rem; }
-      .back-to-home { top: 1rem; left: 1rem; }
+    @media (max-width: 850px) {
+      .auth-wrapper { flex-direction: column; min-height: auto; }
+      .auth-side { flex: 0 0 auto; border-right: none; border-bottom: 1px solid rgba(94,225,241,0.1); padding: 2rem 1.5rem; }
+      .auth-card { padding: 2rem 1.5rem; }
+      .back-to-home { top: 0.85rem; left: 0.85rem; }
+      .form-row { grid-template-columns: 1fr !important; gap: 0.85rem !important; }
+    }
+
+    @media (max-width: 480px) {
+      .auth-page { padding: 0.75rem; }
+      .auth-wrapper { border-radius: 12px; }
+      .auth-side { padding: 1.5rem 1rem; }
+      .auth-card { padding: 1.5rem 1rem; }
+      .side-title { font-size: 1.35rem; }
+      .auth-title { font-size: 1.35rem; }
+      .input-wrap input { padding: 0.7rem 0.85rem 0.7rem 2.4rem; font-size: 0.85rem; }
+      .btn-submit { min-height: 44px; font-size: 0.9rem; }
     }
   `]
 })

@@ -322,6 +322,22 @@ import { BusinessService, Business } from '../../core/services/business.service'
       animation: spin 0.7s linear infinite;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Responsive Queries */
+    @media (max-width: 768px) {
+      .page-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .sim-inputs { grid-template-columns: 1fr !important; }
+      .sim-actions { flex-direction: column; }
+      .sim-actions button { width: 100%; }
+      .sim-result-grid { grid-template-columns: 1fr; }
+      .health-score-container { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .health-score-value { font-size: 2.8rem; }
+      .sim-result-box { padding: 1rem; }
+      .table-responsive { overflow-x: auto; }
+    }
   `]
 })
 export class AnalyticsComponent implements OnInit {
