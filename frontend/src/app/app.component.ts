@@ -1,3 +1,4 @@
+// NOVA AI Decision Engine — Production Build Trigger
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
