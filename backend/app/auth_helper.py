@@ -23,6 +23,8 @@ def jwt_required_compat():
     def decorator(fn):
         @wraps(fn)
         def wrapper(*args, **kwargs):
+            if request.method == 'OPTIONS':
+                return '', 200
             if HAS_JWT:
                 return _jwt_required()(fn)(*args, **kwargs)
             return fn(*args, **kwargs)

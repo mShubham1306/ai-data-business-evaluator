@@ -19,8 +19,15 @@ def create_app(config_name=None):
     # Initialize extensions
     db.init_app(app)
     init_jwt(app)
-    # Always allow all origins so Vercel frontend can reach Render backend
-    CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=False)
+    # Always allow all origins and headers so Vercel frontend can reach Render backend
+    CORS(app, resources={r"/*": {"origins": "*", "allow_headers": "*", "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"]}})
+    
+    @app.after_request
+    def add_cors_headers(response):
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With'
+        response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+        return response
     
     # Create upload folder
     os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
@@ -42,7 +49,7 @@ def create_app(config_name=None):
         seed_demo_data()
     
     # Health check endpoint
-    @app.route('/health', methods=['GET'])
+    @app.route('/health', methods=['GET', 'OPTIONS'])
     def health():
         return {'status': 'healthy', 'service': 'NOVA Backend'}, 200
     
