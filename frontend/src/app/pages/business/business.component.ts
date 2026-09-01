@@ -162,9 +162,12 @@ interface FinancialRow {
 
         <div class="empty-data-box" *ngIf="financialRows.length === 0">
           <span class="empty-icon">📈</span>
-          <h4>No Training Data Uploaded Yet</h4>
-          <p>Click on <strong>Import Data &amp; Retrain AI Model</strong> tab to upload your CSV or paste JSON records.</p>
-          <button class="btn btn-primary mt-3" (click)="setViewSection('ingest')">📥 Import Business Data</button>
+          <h4>No Financial Data Loaded for {{ business.name }} Yet</h4>
+          <p>Click below to load 18 months of sample tech financial data in 1-click, or upload your own CSV/JSON file.</p>
+          <div class="empty-btns-row mt-3">
+            <button class="btn btn-primary 3d-btn" (click)="loadInstantSampleData()">⚡ 1-Click Load Sample Tech Data</button>
+            <button class="btn btn-secondary" (click)="setViewSection('ingest')">📁 Upload Custom CSV / JSON File</button>
+          </div>
         </div>
       </div>
 
@@ -343,6 +346,7 @@ interface FinancialRow {
     .text-muted { color: var(--muted-gray); }
 
     .empty-data-box { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3rem; text-align: center; background: var(--cream); border-radius: 12px; }
+    .empty-btns-row { display: flex; gap: 0.85rem; flex-wrap: wrap; justify-content: center; }
     .empty-icon { font-size: 2.8rem; margin-bottom: 0.5rem; }
 
     @media (max-width: 768px) {
@@ -551,19 +555,32 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
 
+  loadInstantSampleData(): void {
+    const sampleData = [
+      { "month": "2024-01", "revenue": 14500, "total_costs": 8000, "net_profit": 6500, "leads": 65, "customers": 12, "marketing_spend": 1200 },
+      { "month": "2024-02", "revenue": 15200, "total_costs": 8200, "net_profit": 7000, "leads": 70, "customers": 14, "marketing_spend": 1250 },
+      { "month": "2024-03", "revenue": 15800, "total_costs": 8300, "net_profit": 7500, "leads": 75, "customers": 15, "marketing_spend": 1300 },
+      { "month": "2024-04", "revenue": 16400, "total_costs": 8500, "net_profit": 7900, "leads": 78, "customers": 16, "marketing_spend": 1350 },
+      { "month": "2024-05", "revenue": 17000, "total_costs": 8700, "net_profit": 8300, "leads": 82, "customers": 17, "marketing_spend": 1400 },
+      { "month": "2024-06", "revenue": 17800, "total_costs": 9000, "net_profit": 8800, "leads": 88, "customers": 19, "marketing_spend": 1500 },
+      { "month": "2024-07", "revenue": 17500, "total_costs": 8900, "net_profit": 8600, "leads": 85, "customers": 18, "marketing_spend": 1450 },
+      { "month": "2024-08", "revenue": 18400, "total_costs": 9200, "net_profit": 9200, "leads": 92, "customers": 20, "marketing_spend": 1550 },
+      { "month": "2024-09", "revenue": 19000, "total_costs": 9400, "net_profit": 9600, "leads": 96, "customers": 21, "marketing_spend": 1600 },
+      { "month": "2024-10", "revenue": 19800, "total_costs": 9700, "net_profit": 10100, "leads": 102, "customers": 23, "marketing_spend": 1700 },
+      { "month": "2024-11", "revenue": 20800, "total_costs": 10000, "net_profit": 10800, "leads": 110, "customers": 25, "marketing_spend": 1800 },
+      { "month": "2024-12", "revenue": 22000, "total_costs": 10500, "net_profit": 11500, "leads": 120, "customers": 28, "marketing_spend": 2000 },
+      { "month": "2025-01", "revenue": 21500, "total_costs": 10300, "net_profit": 11200, "leads": 115, "customers": 27, "marketing_spend": 1900 },
+      { "month": "2025-02", "revenue": 22500, "total_costs": 10600, "net_profit": 11900, "leads": 122, "customers": 29, "marketing_spend": 2050 },
+      { "month": "2025-03", "revenue": 23800, "total_costs": 11000, "net_profit": 12800, "leads": 130, "customers": 31, "marketing_spend": 2150 },
+      { "month": "2025-04", "revenue": 24800, "total_costs": 11300, "net_profit": 13500, "leads": 138, "customers": 33, "marketing_spend": 2250 },
+      { "month": "2025-05", "revenue": 26000, "total_costs": 11700, "net_profit": 14300, "leads": 145, "customers": 36, "marketing_spend": 2400 },
+      { "month": "2025-06", "revenue": 27500, "total_costs": 12200, "net_profit": 15300, "leads": 155, "customers": 39, "marketing_spend": 2550 }
+    ];
+    this.saveFinancialPayload(sampleData);
+  }
+
   loadSampleNovaData(): void {
-    this.pastedJson = JSON.stringify([
-      { "month": "2024-07", "revenue": 150777.16, "cogs": 35257.55, "opex": 37331.62, "total_costs": 72589.17, "net_profit": 78187.99 },
-      { "month": "2024-08", "revenue": 158792.74, "cogs": 34360.53, "opex": 51171.12, "total_costs": 85531.65, "net_profit": 73261.09 },
-      { "month": "2024-09", "revenue": 181354.60, "cogs": 38811.90, "opex": 60940.26, "total_costs": 99752.16, "net_profit": 81602.44 },
-      { "month": "2024-10", "revenue": 172029.43, "cogs": 29911.39, "opex": 56636.26, "total_costs": 86547.65, "net_profit": 85481.78 },
-      { "month": "2024-11", "revenue": 159136.69, "cogs": 41815.79, "opex": 51875.29, "total_costs": 93691.08, "net_profit": 65445.61 },
-      { "month": "2024-12", "revenue": 141582.28, "cogs": 37753.09, "opex": 38608.01, "total_costs": 76361.10, "net_profit": 65221.18 },
-      { "month": "2025-01", "revenue": 143062.71, "cogs": 30898.81, "opex": 43924.79, "total_costs": 74823.60, "net_profit": 68239.11 },
-      { "month": "2025-02", "revenue": 157359.29, "cogs": 27164.08, "opex": 40512.98, "total_costs": 67677.06, "net_profit": 89682.23 },
-      { "month": "2025-03", "revenue": 166884.64, "cogs": 36696.04, "opex": 34935.61, "total_costs": 71631.65, "net_profit": 95252.99 },
-      { "month": "2025-04", "revenue": 186869.46, "cogs": 28577.91, "opex": 62059.07, "total_costs": 90636.98, "net_profit": 96232.48 }
-    ], null, 2);
+    this.loadInstantSampleData();
   }
 
   submitSingleMonth(): void {
