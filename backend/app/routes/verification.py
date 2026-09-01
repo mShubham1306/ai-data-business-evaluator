@@ -5,6 +5,7 @@ from werkzeug.utils import secure_filename
 from app.models import Business, DataUpload
 from app.services.data_service import DataProcessingService, DataValidationService
 from app.services.verification_service import VerificationEngine, LLMPlausibilityCheck
+from app.services.action_service import FeedbackEngineService
 from app import db
 import os
 import pandas as pd
@@ -212,4 +213,23 @@ def get_data_quality(business_id):
         'data_completeness': world_model.data_completeness,
         'data_quality_score': world_model.data_quality_score,
         'assessment': 'Good' if world_model.data_quality_score >= 70 else 'Fair' if world_model.data_quality_score >= 50 else 'Needs Improvement'
+    }), 200
+
+
+@verification_bp.route('/<business_id>/system-health', methods=['GET'])
+@jwt_required()
+def get_system_health(business_id):
+    """Get system health summary"""
+    user_id = get_jwt_identity()
+    business = Business.query.filter_by(id=business_id, user_id=user_id).first()
+
+    if not business:
+        return jsonify({'error': 'Business not found'}), 404
+
+    health = FeedbackEngineService.get_system_performance_summary()
+    drift = FeedbackEngineService.calculate_model_drift(business_id)
+
+    return jsonify({
+        'performance': health,
+        'model_drift': drift
     }), 200
