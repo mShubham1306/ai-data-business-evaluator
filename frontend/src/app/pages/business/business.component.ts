@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BusinessService, Business, WorldModel } from '../../core/services/business.service';
 import { CurrencyService } from '../../core/services/currency.service';
@@ -29,10 +29,21 @@ interface FinancialRow {
       <!-- Top Header Navigation -->
       <div class="header-nav mb-3">
         <a routerLink="/dashboard" class="back-link">← Back to Dashboard</a>
-        <div class="title-row">
-          <h2>{{ business.name }}</h2>
-          <span class="badge">{{ business.industry || 'Business Profile' }}</span>
-          <span class="currency-badge">Currency: {{ business.currency || 'USD' }}</span>
+        <div class="biz-header-row">
+          <div class="title-row">
+            <h2>{{ business.name }}</h2>
+            <span class="badge">{{ business.industry || 'Business Profile' }}</span>
+            <span class="currency-badge">Currency: {{ business.currency || 'USD' }}</span>
+          </div>
+          <!-- Business Selector Dropdown -->
+          <div class="business-selector-box" *ngIf="businesses.length > 0">
+            <span class="bs-label">🏢 Switch Business:</span>
+            <select [ngModel]="businessId" (ngModelChange)="onBusinessChange($event)" class="bs-select">
+              <option *ngFor="let b of businesses" [value]="b.id">
+                {{ b.name }} ({{ b.industry || 'General' }})
+              </option>
+            </select>
+          </div>
         </div>
         <p class="desc mt-1">Data Ingestion Hub, Multi-Chart Visualizations &amp; Performance Engine</p>
       </div>
@@ -297,6 +308,10 @@ interface FinancialRow {
     .actions-row { display: flex; gap: 0.75rem; }
     .form-grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .biz-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+    .business-selector-box { display: flex; align-items: center; gap: 0.4rem; background: var(--white); border: 1px solid var(--border-color); padding: 0.4rem 0.85rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .bs-label { font-size: 0.8rem; font-weight: 700; color: var(--deep-navy); white-space: nowrap; }
+    .bs-select { border: none; background: transparent; font-size: 0.85rem; font-weight: 700; color: var(--deep-navy); cursor: pointer; outline: none; font-family: inherit; }
     .form-group label { font-size: 0.82rem; font-weight: 600; color: var(--deep-navy); }
     .input { padding: 0.65rem 0.85rem; border: 1px solid var(--border-color); border-radius: 8px; font-family: inherit; font-size: 0.9rem; }
 
@@ -341,6 +356,8 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('pieChartCanvas') pieChartCanvas!: ElementRef<HTMLCanvasElement>;
 
   business: Business | null = null;
+  businesses: Business[] = [];
+  businessId = '';
   worldModel: WorldModel | null = null;
   financialRows: FinancialRow[] = [];
 
@@ -364,6 +381,7 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private businessService: BusinessService,
     public currencyService: CurrencyService
   ) {}
@@ -378,16 +396,31 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
       }
     });
 
+    // Load business list for dropdown
+    this.businessService.getBusinesses().subscribe(res => {
+      this.businesses = res.businesses || [];
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
+      this.businessId = id;
       this.loadBusiness(id);
     } else {
       this.businessService.getBusinesses().subscribe(res => {
+        this.businesses = res.businesses || [];
         if (res.businesses.length > 0) {
-          this.loadBusiness(res.businesses[0].id);
+          this.businessId = res.businesses[0].id;
+          this.loadBusiness(this.businessId);
         }
       });
     }
+  }
+
+  onBusinessChange(newId: string): void {
+    if (!newId || newId === this.businessId) return;
+    this.businessId = newId;
+    this.router.navigate(['/business', newId]);
+    this.loadBusiness(newId);
   }
 
   ngAfterViewInit(): void {

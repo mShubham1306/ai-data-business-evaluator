@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AnalyticsService } from '../../core/services/analytics.service';
@@ -25,6 +25,15 @@ import Chart from 'chart.js/auto';
             <p class="page-subtitle">{{ business.name }} — Your numbers, explained in plain English.</p>
           </div>
           <div class="header-actions">
+            <!-- Business Selector Dropdown -->
+            <div class="business-selector-box" *ngIf="businesses.length > 0">
+              <span class="bs-label">🏢 Switch Business:</span>
+              <select [ngModel]="businessId" (ngModelChange)="onBusinessChange($event)" class="bs-select">
+                <option *ngFor="let b of businesses" [value]="b.id">
+                  {{ b.name }} ({{ b.industry || 'General' }})
+                </option>
+              </select>
+            </div>
             <button class="btn btn-ghost" (click)="refreshAll()" [class.spinning]="isLoading">
               🔄 Refresh Data
             </button>
@@ -439,7 +448,10 @@ import Chart from 'chart.js/auto';
     .header-content { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
     .page-title { font-size: 1.6rem; font-weight: 800; color: var(--deep-navy); margin: 0 0 0.25rem 0; }
     .page-subtitle { font-size: 0.9rem; color: var(--slate-gray); margin: 0; }
-    .header-actions { display: flex; gap: 0.5rem; }
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .business-selector-box { display: flex; align-items: center; gap: 0.4rem; background: var(--white); border: 1px solid var(--border-color); padding: 0.4rem 0.85rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .bs-label { font-size: 0.8rem; font-weight: 700; color: var(--deep-navy); white-space: nowrap; }
+    .bs-select { border: none; background: transparent; font-size: 0.85rem; font-weight: 700; color: var(--deep-navy); cursor: pointer; outline: none; font-family: inherit; }
 
     /* Loading */
     .loading-bar { height: 4px; background: var(--border-color); border-radius: 4px; overflow: hidden; margin-bottom: 1.5rem; }
@@ -674,9 +686,10 @@ export class AnalyticsComponent implements OnInit, AfterViewInit, OnDestroy {
   outcomeSaved = false;
   outcomeSavedMessage = '';
 
+  businesses: Business[] = [];
   isLoading = false;
   private forecastChart: Chart | null = null;
-  private businessId = '';
+  public businessId = '';
   private apiUrl = environment.apiUrl;
 
   dimIcons: Record<string, string> = {
@@ -692,6 +705,7 @@ export class AnalyticsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private analyticsService: AnalyticsService,
     private businessService: BusinessService,
     public currencyService: CurrencyService,
@@ -704,18 +718,31 @@ export class AnalyticsComponent implements OnInit, AfterViewInit, OnDestroy {
       if (this.forecasts.length > 0) setTimeout(() => this.renderForecastChart(), 100);
     });
 
+    // Load business list for dropdown
+    this.businessService.getBusinesses().subscribe(res => {
+      this.businesses = res.businesses || [];
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
       this.businessId = id;
       this.loadAll(id);
     } else {
       this.businessService.getBusinesses().subscribe(res => {
+        this.businesses = res.businesses || [];
         if (res.businesses.length > 0) {
           this.businessId = res.businesses[0].id;
           this.loadAll(this.businessId);
         }
       });
     }
+  }
+
+  onBusinessChange(newId: string): void {
+    if (!newId || newId === this.businessId) return;
+    this.businessId = newId;
+    this.router.navigate(['/analytics', newId]);
+    this.loadAll(newId);
   }
 
   ngAfterViewInit(): void {

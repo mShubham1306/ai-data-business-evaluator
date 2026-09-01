@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
@@ -23,8 +23,21 @@ interface ChatMessage {
       <!-- Navigation Header -->
       <div class="header-nav mb-3">
         <a routerLink="/dashboard" class="back-link">← Back to Dashboard</a>
-        <h2>🤖 AI Business Copilot</h2>
-        <p class="subtitle">{{ business.name }} | Instant Business Advice &amp; Decision Assistant</p>
+        <div class="copilot-header-row">
+          <div>
+            <h2>🤖 AI Business Copilot</h2>
+            <p class="subtitle">{{ business.name }} | Instant Business Advice &amp; Decision Assistant</p>
+          </div>
+          <!-- Business Selector Dropdown -->
+          <div class="business-selector-box" *ngIf="businesses.length > 0">
+            <span class="bs-label">🏢 Switch Business:</span>
+            <select [ngModel]="businessId" (ngModelChange)="onBusinessChange($event)" class="bs-select">
+              <option *ngFor="let b of businesses" [value]="b.id">
+                {{ b.name }} ({{ b.industry || 'General' }})
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
 
       <!-- Copilot Navigation Tabs -->
@@ -177,6 +190,10 @@ interface ChatMessage {
     .chip-btn { background: var(--cream); border: 1px solid var(--border-color); color: var(--deep-navy); font-size: 0.78rem; padding: 0.35rem 0.75rem; border-radius: 16px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
     .chip-btn:hover { background: var(--sky-blue); transform: translateY(-2px); }
 
+    .copilot-header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; }
+    .business-selector-box { display: flex; align-items: center; gap: 0.4rem; background: var(--white); border: 1px solid var(--border-color); padding: 0.4rem 0.85rem; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); margin-top: 0.25rem; }
+    .bs-label { font-size: 0.8rem; font-weight: 700; color: var(--deep-navy); white-space: nowrap; }
+    .bs-select { border: none; background: transparent; font-size: 0.85rem; font-weight: 700; color: var(--deep-navy); cursor: pointer; outline: none; font-family: inherit; }
     .chat-messages { height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.85rem; padding: 1.25rem; background: var(--cream); border-radius: 12px; border: 1px solid var(--border-color); }
     .msg-bubble { max-width: 85%; padding: 0.85rem 1.1rem; border-radius: 14px; }
     .msg-bubble.user { align-self: flex-end; background: var(--grad-vibrant); color: var(--deep-navy); font-weight: 500; box-shadow: 0 4px 14px rgba(246, 159, 152, 0.3); }
@@ -217,6 +234,8 @@ interface ChatMessage {
 })
 export class CopilotComponent implements OnInit {
   business: Business | null = null;
+  businesses: Business[] = [];
+  businessId = '';
   currentUser: StoredUser | null = null;
   userQuery = '';
   sending = false;
@@ -232,6 +251,7 @@ export class CopilotComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private http: HttpClient,
     private businessService: BusinessService,
     private authService: AuthService,
@@ -248,16 +268,31 @@ export class CopilotComponent implements OnInit {
       }
     });
 
+    // Load business list for selector
+    this.businessService.getBusinesses().subscribe(res => {
+      this.businesses = res.businesses || [];
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
+      this.businessId = id;
       this.loadBusiness(id);
     } else {
       this.businessService.getBusinesses().subscribe(res => {
+        this.businesses = res.businesses || [];
         if (res.businesses.length > 0) {
-          this.loadBusiness(res.businesses[0].id);
+          this.businessId = res.businesses[0].id;
+          this.loadBusiness(this.businessId);
         }
       });
     }
+  }
+
+  onBusinessChange(newId: string): void {
+    if (!newId || newId === this.businessId) return;
+    this.businessId = newId;
+    this.router.navigate(['/copilot', newId]);
+    this.loadBusiness(newId);
   }
 
   loadBusiness(id: string): void {

@@ -1,0 +1,44 @@
+{
+  "business": {
+    "name": "SmSol",
+    "industry": "Technology & Software",
+    "currency": "USD",
+    "size": "Micro (1-9 employees)",
+    "description": "B2B SaaS and Custom Software Solutions",
+    "goals": {
+      "target_annual_revenue": 200000,
+      "target_margin": 45,
+      "target_new_clients_monthly": 5
+    }
+  },
+  "monthly_financials": [
+    { "month": "2024-01", "revenue": 14500, "expenses": 8000, "profit": 6500, "leads": 65, "customers": 12, "marketing_spend": 1200 },
+    { "month": "2024-02", "revenue": 15200, "expenses": 8200, "profit": 7000, "leads": 70, "customers": 14, "marketing_spend": 1250 },
+    { "month": "2024-03", "revenue": 15800, "expenses": 8300, "profit": 7500, "leads": 75, "customers": 15, "marketing_spend": 1300 },
+    { "month": "2024-04", "revenue": 16400, "expenses": 8500, "profit": 7900, "leads": 78, "customers": 16, "marketing_spend": 1350 },
+    { "month": "2024-05", "revenue": 17000, "expenses": 8700, "profit": 8300, "leads": 82, "customers": 17, "marketing_spend": 1400 },
+    { "month": "2024-06", "revenue": 17800, "expenses": 9000, "profit": 8800, "leads": 88, "customers": 19, "marketing_spend": 1500 },
+    { "month": "2024-07", "revenue": 17500, "expenses": 8900, "profit": 8600, "leads": 85, "customers": 18, "marketing_spend": 1450 },
+    { "month": "2024-08", "revenue": 18400, "expenses": 9200, "profit": 9200, "leads": 92, "customers": 20, "marketing_spend": 1550 },
+    { "month": "2024-09", "revenue": 19000, "expenses": 9400, "profit": 9600, "leads": 96, "customers": 21, "marketing_spend": 1600 },
+    { "month": "2024-10", "revenue": 19800, "expenses": 9700, "profit": 10100, "leads": 102, "customers": 23, "marketing_spend": 1700 },
+    { "month": "2024-11", "revenue": 20800, "expenses": 10000, "profit": 10800, "leads": 110, "customers": 25, "marketing_spend": 1800 },
+    { "month": "2024-12", "revenue": 22000, "expenses": 10500, "profit": 11500, "leads": 120, "customers": 28, "marketing_spend": 2000 },
+    { "month": "2025-01", "revenue": 21500, "expenses": 10300, "profit": 11200, "leads": 115, "customers": 27, "marketing_spend": 1900 },
+    { "month": "2025-02", "revenue": 22500, "expenses": 10600, "profit": 11900, "leads": 122, "customers": 29, "marketing_spend": 2050 },
+    { "month": "2025-03", "revenue": 23800, "expenses": 11000, "profit": 12800, "leads": 130, "customers": 31, "marketing_spend": 2150 },
+    { "month": "2025-04", "revenue": 24800, "expenses": 11300, "profit": 13500, "leads": 138, "customers": 33, "marketing_spend": 2250 },
+    { "month": "2025-05", "revenue": 26000, "expenses": 11700, "profit": 14300, "leads": 145, "customers": 36, "marketing_spend": 2400 },
+    { "month": "2025-06", "revenue": 27500, "expenses": 12200, "profit": 15300, "leads": 155, "customers": 39, "marketing_spend": 2550 }
+  ],
+  "products": [
+    { "name": "Starter SaaS Plan", "price": 99, "cost": 15, "margin": 84.8 },
+    { "name": "Pro Business SaaS Tier", "price": 499, "cost": 45, "margin": 91.0 },
+    { "name": "Enterprise Custom License", "price": 2500, "cost": 350, "margin": 86.0 }
+  ],
+  "customer_segments": [
+    { "name": "Enterprise (Top 15%)", "count": 6, "avg_monthly_value": 2500, "retention": 96 },
+    { "name": "Mid-Market (Middle 55%)", "count": 22, "avg_monthly_value": 499, "retention": 88 },
+    { "name": "SMB (Bottom 30%)", "count": 11, "avg_monthly_value": 99, "retention": 74 }
+  ]
+}
