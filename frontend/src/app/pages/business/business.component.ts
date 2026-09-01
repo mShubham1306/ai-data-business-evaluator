@@ -33,7 +33,7 @@ interface FinancialRow {
           <span class="badge">{{ business.industry || 'Business Profile' }}</span>
           <span class="currency-badge">Currency: {{ business.currency || 'AED' }}</span>
         </div>
-        <p class="desc mt-1">Data Ingestion Hub, Multi-Chart Visualizations &amp; Historical Performance</p>
+        <p class="desc mt-1">Data Ingestion Hub, Multi-Chart Visualizations &amp; Performance Engine</p>
       </div>
 
       <!-- Real Summary Cards (only shows when user data exists) -->
@@ -41,7 +41,7 @@ interface FinancialRow {
         <div class="wm-stat 3d-mini">
           <span class="wm-label">Latest Revenue</span>
           <span class="wm-val">{{ business.currency || 'AED' }} {{ latestRevenue | number:'1.0-0' }}</span>
-          <span class="wm-sub">Current Month Record</span>
+          <span class="wm-sub">Current Month</span>
         </div>
 
         <div class="wm-stat 3d-mini">
@@ -64,27 +64,105 @@ interface FinancialRow {
         </div>
       </div>
 
-      <!-- Dedicated Section Tabs / Columns -->
+      <!-- Dedicated View Tabs -->
       <div class="page-view-tabs mb-4">
-        <button class="view-tab-btn" [class.active]="viewSection === 'table'" (click)="setViewSection('table')">
-          📋 Data Table &amp; Upload
-        </button>
         <button class="view-tab-btn" [class.active]="viewSection === 'charts'" (click)="setViewSection('charts')">
-          📊 Visual Charts Hub (Bar &amp; Pie)
+          📊 Visual Charts (Bar &amp; Doughnut)
+        </button>
+        <button class="view-tab-btn" [class.active]="viewSection === 'ingest'" (click)="setViewSection('ingest')">
+          📥 Import Data &amp; Retrain AI Model
         </button>
         <button class="view-tab-btn" [class.active]="viewSection === 'products'" (click)="setViewSection('products')">
-          🏷️ Product Margins
+          🏷️ Product Profit Margins
         </button>
       </div>
 
-      <!-- SECTION 1: Data Table & Ingestion -->
-      <div *ngIf="viewSection === 'table'">
-        <!-- Data Ingestion Form Card -->
+      <!-- SECTION 1: Visual Charts Hub (Default Page View) -->
+      <div *ngIf="viewSection === 'charts'">
+        <div class="grid grid-2 mb-4" *ngIf="financialRows.length > 0">
+          <!-- Chart 1: Revenue vs Costs Bar & Line Combo -->
+          <div class="card 3d-card">
+            <h3>📊 Monthly Revenue, Expenses &amp; Net Profit</h3>
+            <p class="desc mt-1">Comparing total monthly revenue against operating costs and profit.</p>
+            <div class="chart-container mt-3">
+              <canvas #comboChartCanvas></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 2: Cost & Profit Allocation Pie/Doughnut Chart -->
+          <div class="card 3d-card">
+            <h3>🥧 Expenses vs Profit Share Breakdown</h3>
+            <p class="desc mt-1">Breakdown of Operating Costs vs Net Profit share of overall revenue.</p>
+            <div class="chart-container mt-3">
+              <canvas #pieChartCanvas></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model Status Card & Collapsible Raw Training Data -->
+        <div class="card 3d-card mb-4" *ngIf="financialRows.length > 0">
+          <div class="card-header-row">
+            <div>
+              <h3>🤖 AI Model Training Status</h3>
+              <p class="desc">Model is trained on {{ financialRows.length }} monthly financial records and actively predicting forecasts.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" (click)="toggleShowRawTable()">
+              {{ showRawTable ? '🙈 Hide Raw Training Data Table' : '👁️ View Raw Training Data Table' }}
+            </button>
+          </div>
+
+          <!-- Collapsible Raw Data Table -->
+          <div class="table-container mt-3" *ngIf="showRawTable">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Month</th>
+                  <th>Revenue ({{ business.currency || 'AED' }})</th>
+                  <th>Total Costs</th>
+                  <th>Net Profit</th>
+                  <th>MoM Diff / Growth</th>
+                  <th>Margin (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let row of financialRows">
+                  <td><strong>{{ row.month }}</strong></td>
+                  <td><strong class="text-navy">{{ business.currency || 'AED' }} {{ row.revenue | number:'1.2-2' }}</strong></td>
+                  <td class="text-muted">{{ business.currency || 'AED' }} {{ row.total_costs | number:'1.2-2' }}</td>
+                  <td><strong class="text-success">{{ business.currency || 'AED' }} {{ row.net_profit | number:'1.2-2' }}</strong></td>
+                  <td>
+                    <span class="diff-chip" [class.diff-up]="row.revDiff >= 0" [class.diff-down]="row.revDiff < 0" *ngIf="row.revDiff !== 0">
+                      {{ row.revDiff >= 0 ? '+' : '' }}{{ business.currency || 'AED' }} {{ row.revDiff | number:'1.0-0' }}
+                      ({{ row.revDiffPct >= 0 ? '+' : '' }}{{ row.revDiffPct | number:'1.1-1' }}%)
+                    </span>
+                    <span class="diff-chip diff-neutral" *ngIf="row.revDiff === 0">Baseline</span>
+                  </td>
+                  <td>
+                    <span class="margin-badge" [class.high]="row.margin >= 40" [class.medium]="row.margin >= 20 && row.margin < 40">
+                      {{ row.margin | number:'1.1-1' }}%
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="empty-data-box" *ngIf="financialRows.length === 0">
+          <span class="empty-icon">📈</span>
+          <h4>No Training Data Uploaded Yet</h4>
+          <p>Click on <strong>Import Data &amp; Retrain AI Model</strong> tab to upload your CSV or paste JSON records.</p>
+          <button class="btn btn-primary mt-3" (click)="setViewSection('ingest')">📥 Import Business Data</button>
+        </div>
+      </div>
+
+      <!-- SECTION 2: Import Data & Retrain AI Model -->
+      <div *ngIf="viewSection === 'ingest'">
         <div class="card 3d-card mb-4">
           <div class="card-header-row">
             <div>
-              <h3>📥 Import Data &amp; Train AI Model</h3>
-              <p class="desc mt-1">Upload a CSV/JSON file, paste raw JSON data, or enter monthly records. The AI model retrains on save!</p>
+              <h3>📥 Import Financial Data &amp; Retrain AI Model</h3>
+              <p class="desc mt-1">Upload a CSV/JSON file, paste raw JSON data, or enter single month records. Data is used strictly for background model training!</p>
             </div>
             <div class="ingest-tabs">
               <button class="tab-btn" [class.active]="activeTab === 'upload'" (click)="activeTab = 'upload'">📁 Upload File</button>
@@ -100,24 +178,24 @@ interface FinancialRow {
               <div class="dropzone-content">
                 <div class="drop-icon-box">📂</div>
                 <p class="drop-title">Click to choose or drag a JSON / CSV file</p>
-                <span class="file-hint">Upload synthetic business JSON, P&amp;L reports, or CSV financial records</span>
+                <span class="file-hint">Upload synthetic business JSON, P&amp;L reports, or CSV financial records to train model</span>
               </div>
             </div>
           </div>
 
           <!-- TAB 2: Paste Raw JSON Data -->
           <div class="tab-content mt-3" *ngIf="activeTab === 'paste'">
-            <label class="form-label">Paste Business Data (JSON format):</label>
+            <label class="form-label">Paste Business Training Data (JSON format):</label>
             <textarea [(ngModel)]="pastedJson" rows="6" class="code-textarea" placeholder='[
   { "month": "2024-07", "revenue": 150777.16, "cogs": 35257.55, "opex": 37331.62, "total_costs": 72589.17, "net_profit": 78187.99 },
   { "month": "2024-08", "revenue": 158792.74, "cogs": 34360.53, "opex": 51171.12, "total_costs": 85531.65, "net_profit": 73261.09 }
 ]'></textarea>
             <div class="actions-row mt-2">
               <button class="btn btn-primary" (click)="submitPastedJson()" [disabled]="!pastedJson.trim() || savingData">
-                <span *ngIf="!savingData">🚀 Process JSON &amp; Train Model</span>
-                <span *ngIf="savingData">Saving &amp; Training Model...</span>
+                <span *ngIf="!savingData">🚀 Process JSON &amp; Train AI Model</span>
+                <span *ngIf="savingData">Training Model...</span>
               </button>
-              <button class="btn btn-secondary" (click)="loadSampleNovaData()">Load Sample Data</button>
+              <button class="btn btn-secondary" (click)="loadSampleNovaData()">Load Sample Training Data</button>
             </div>
           </div>
 
@@ -150,94 +228,9 @@ interface FinancialRow {
             </div>
           </div>
         </div>
-
-        <!-- Verified Financial Data Table with Diff Column -->
-        <div class="card 3d-card mb-4">
-          <div class="card-header-row mb-3">
-            <div>
-              <h3>📋 Verified Financial Records with MoM Diff Growth</h3>
-              <p class="desc">Includes Month-over-Month (MoM) revenue and profit difference calculations.</p>
-            </div>
-            <span class="records-count-badge" *ngIf="financialRows.length > 0">{{ financialRows.length }} Months Loaded</span>
-          </div>
-
-          <div class="table-container" *ngIf="financialRows.length > 0">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Month</th>
-                  <th>Revenue ({{ business.currency || 'AED' }})</th>
-                  <th>Total Costs</th>
-                  <th>Net Profit</th>
-                  <th>MoM Diff / Growth</th>
-                  <th>Profit Margin (%)</th>
-                  <th>Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let row of financialRows">
-                  <td><strong>{{ row.month }}</strong></td>
-                  <td><strong class="text-navy">{{ business.currency || 'AED' }} {{ row.revenue | number:'1.2-2' }}</strong></td>
-                  <td class="text-muted">{{ business.currency || 'AED' }} {{ row.total_costs | number:'1.2-2' }}</td>
-                  <td><strong class="text-success">{{ business.currency || 'AED' }} {{ row.net_profit | number:'1.2-2' }}</strong></td>
-                  <td>
-                    <!-- MoM Diff Column -->
-                    <span class="diff-chip" [class.diff-up]="row.revDiff >= 0" [class.diff-down]="row.revDiff < 0" *ngIf="row.revDiff !== 0">
-                      {{ row.revDiff >= 0 ? '+' : '' }}{{ business.currency || 'AED' }} {{ row.revDiff | number:'1.0-0' }}
-                      ({{ row.revDiffPct >= 0 ? '+' : '' }}{{ row.revDiffPct | number:'1.1-1' }}%)
-                    </span>
-                    <span class="diff-chip diff-neutral" *ngIf="row.revDiff === 0">Baseline</span>
-                  </td>
-                  <td>
-                    <span class="margin-badge" [class.high]="row.margin >= 40" [class.medium]="row.margin >= 20 && row.margin < 40">
-                      {{ row.margin | number:'1.1-1' }}%
-                    </span>
-                  </td>
-                  <td><span class="verified-tag">✓ Ingested</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- Empty Data State -->
-          <div class="empty-data-box" *ngIf="financialRows.length === 0">
-            <span class="empty-icon">📊</span>
-            <h4>No Financial Data Uploaded Yet</h4>
-            <p>Upload a file or paste JSON data above to train the AI model and generate reports.</p>
-          </div>
-        </div>
       </div>
 
-      <!-- SECTION 2: Visual Charts Hub (Bar & Pie Charts) -->
-      <div *ngIf="viewSection === 'charts'">
-        <div class="grid grid-2 mb-4" *ngIf="financialRows.length > 0">
-          <!-- Chart 1: Revenue vs Costs Bar & Line Combo -->
-          <div class="card 3d-card">
-            <h3>📊 Monthly Revenue, Expenses &amp; Profit (Bar &amp; Line Chart)</h3>
-            <p class="desc mt-1">Comparing total revenue against operating costs and net profit.</p>
-            <div class="chart-container mt-3">
-              <canvas #comboChartCanvas></canvas>
-            </div>
-          </div>
-
-          <!-- Chart 2: Cost & Profit Allocation Pie/Doughnut Chart -->
-          <div class="card 3d-card">
-            <h3>🥧 Expense &amp; Profit Allocation Share (Doughnut Chart)</h3>
-            <p class="desc mt-1">Breakdown of Operating Costs vs Net Profit share of total income.</p>
-            <div class="chart-container mt-3">
-              <canvas #pieChartCanvas></canvas>
-            </div>
-          </div>
-        </div>
-
-        <div class="empty-data-box" *ngIf="financialRows.length === 0">
-          <span class="empty-icon">📈</span>
-          <h4>No Charts to Display</h4>
-          <p>Please upload or input your financial records on the <strong>Data Table &amp; Upload</strong> tab to generate charts.</p>
-        </div>
-      </div>
-
-      <!-- SECTION 3: Product Line Margins -->
+      <!-- SECTION 3: Product Profit Margins -->
       <div *ngIf="viewSection === 'products'">
         <div class="card 3d-card mb-4">
           <h3>🏷️ Product Line &amp; Service Profit Margins</h3>
@@ -268,8 +261,8 @@ interface FinancialRow {
 
           <div class="empty-data-box" *ngIf="!worldModel?.products || worldModel!.products!.length === 0">
             <span class="empty-icon">🏷️</span>
-            <h4>No Product Line Breakdown Available</h4>
-            <p>Product line breakdowns can be ingested via JSON or file upload.</p>
+            <h4>No Product Line Data</h4>
+            <p>Product line details can be ingested via JSON or file upload.</p>
           </div>
         </div>
       </div>
@@ -287,7 +280,6 @@ interface FinancialRow {
     .view-tab-btn.active { background: var(--deep-navy); color: var(--white); box-shadow: 0 4px 12px rgba(13, 27, 42, 0.15); }
 
     .card-header-row { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; }
-    .records-count-badge { font-size: 0.8rem; font-weight: 700; background: var(--sky-blue); color: var(--deep-navy); padding: 0.35rem 0.75rem; border-radius: 12px; }
 
     .ingest-tabs { display: flex; gap: 0.5rem; background: var(--cream); padding: 0.25rem; border-radius: 10px; border: 1px solid var(--border-color); }
     .tab-btn { background: none; border: none; padding: 0.45rem 0.85rem; font-size: 0.82rem; font-weight: 600; color: var(--slate-gray); border-radius: 8px; cursor: pointer; transition: all 0.2s; }
@@ -328,7 +320,6 @@ interface FinancialRow {
     .margin-badge { padding: 0.25rem 0.65rem; border-radius: 6px; background: #fee2e2; color: #991b1b; font-weight: 700; font-size: 0.8rem; }
     .margin-badge.medium { background: #fef3c7; color: #92400e; }
     .margin-badge.high { background: #dcfce7; color: #166534; }
-    .verified-tag { font-size: 0.75rem; color: #166534; font-weight: 700; background: #dcfce7; padding: 0.2rem 0.5rem; border-radius: 6px; }
 
     .text-success { color: var(--success-green); }
     .text-coral { color: var(--coral-pink); }
@@ -357,7 +348,8 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
   latestProfit = 0;
   latestMargin = 0;
 
-  viewSection: 'table' | 'charts' | 'products' = 'table';
+  viewSection: 'charts' | 'ingest' | 'products' = 'charts';
+  showRawTable = false;
   activeTab: 'upload' | 'paste' | 'single' = 'upload';
   pastedJson = '';
   newMonth = { month: '', revenue: null as number | null, total_costs: null as number | null };
@@ -394,11 +386,15 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
     this.destroyCharts();
   }
 
-  setViewSection(section: 'table' | 'charts' | 'products'): void {
+  setViewSection(section: 'charts' | 'ingest' | 'products'): void {
     this.viewSection = section;
     if (section === 'charts') {
       setTimeout(() => this.renderCharts(), 200);
     }
+  }
+
+  toggleShowRawTable(): void {
+    this.showRawTable = !this.showRawTable;
   }
 
   loadBusiness(id: string): void {
@@ -425,7 +421,6 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
       const net_profit = Number(profitObj[m] || (revenue - total_costs));
       const margin = revenue > 0 ? (net_profit / revenue) * 100 : 0;
 
-      // Compute MoM Difference
       let revDiff = 0;
       let revDiffPct = 0;
       let profitDiff = 0;
@@ -519,10 +514,11 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
       next: (res) => {
         this.savingData = false;
         this.ingestSuccess = true;
-        this.ingestMessage = `✅ Success! Ingested ${res.records_processed || payload.length} monthly financial records & retrained ML model.`;
+        this.ingestMessage = `✅ Success! Model trained on ${res.records_processed || payload.length} financial records.`;
         this.businessService.getWorldModel(this.business!.id).subscribe(wm => {
           this.worldModel = wm;
           this.parseFinancialRows(wm);
+          this.setViewSection('charts');
         });
       },
       error: (err) => {
