@@ -9,13 +9,13 @@ class User(db.Model):
     __tablename__ = 'users'
     
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    email = db.Column(db.String(255), unique=True, nullable=False)
+    email = db.Column(db.String(255), unique=True, nullable=False, index=True)
     password_hash = db.Column(db.String(255), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     company_name = db.Column(db.String(255))
     role = db.Column(db.String(50), default='user')
     is_active = db.Column(db.Boolean, default=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationships
@@ -28,7 +28,7 @@ class Business(db.Model):
     __tablename__ = 'businesses'
     
     id = db.Column(db.String(36), primary_key=True, default=lambda: str(uuid.uuid4()))
-    user_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False)
+    user_id = db.Column(db.String(36), db.ForeignKey('users.id'), nullable=False, index=True)
     name = db.Column(db.String(255), nullable=False)
     industry = db.Column(db.String(100))
     country = db.Column(db.String(100))
@@ -39,7 +39,7 @@ class Business(db.Model):
     goals = db.Column(JSON, default={})
     meta_data = db.Column(JSON, default={})
     is_active = db.Column(db.Boolean, default=True)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+    created_at = db.Column(db.DateTime, default=datetime.utcnow, index=True)
     updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     
     # Relationships
