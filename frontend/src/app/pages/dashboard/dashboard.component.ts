@@ -501,7 +501,7 @@ export class DashboardComponent implements OnInit {
       error: (err) => {
         this.creating = false;
         if (err.status === 0) {
-          this.modalError = 'Unable to connect to backend server. Please check your network connection.';
+          this.modalError = 'Unable to connect to backend server. The free server on Render may be waking up (15–30s) — please try again in a moment!';
         } else {
           this.modalError = err.error?.error || err.error?.msg || err.message || 'Failed to create business. Please try again.';
         }
