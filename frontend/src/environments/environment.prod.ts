@@ -1,4 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.nova-business.com/api'
+  apiUrl: (typeof window !== 'undefined' && (window as any)['NOVA_API_URL'])
+    ? (window as any)['NOVA_API_URL']
+    : 'https://ai-data-business-evaluator.onrender.com/api'
 };
