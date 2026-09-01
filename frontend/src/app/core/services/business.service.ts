@@ -61,4 +61,8 @@ export class BusinessService {
   getWorldModel(id: string): Observable<WorldModel> {
     return this.http.get<WorldModel>(`${this.apiUrl}/${id}/world-model`);
   }
+
+  updateWorldModelData(id: string, data: any): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/${id}/world-model`, data);
+  }
 }
