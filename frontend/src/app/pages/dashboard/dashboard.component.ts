@@ -4,6 +4,7 @@ import { RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BusinessService, Business } from '../../core/services/business.service';
 import { AuthService, StoredUser } from '../../core/services/auth.service';
+import { CurrencyService } from '../../core/services/currency.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -328,12 +329,19 @@ export class DashboardComponent implements OnInit {
   constructor(
     private businessService: BusinessService,
     private authService: AuthService,
+    public currencyService: CurrencyService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
     this.currentUser = this.authService.getStoredUser();
     this.authService.currentUser$.subscribe(u => this.currentUser = u);
+
+    this.currencyService.selectedCurrency$.subscribe(curr => {
+      this.selectedCurrency = curr;
+      this.newBiz.currency = curr;
+    });
+
     this.loadBusinesses();
   }
 
@@ -341,7 +349,7 @@ export class DashboardComponent implements OnInit {
     return {
       name: '',
       industry: '',
-      currency: this.selectedCurrency || 'AED',
+      currency: this.currencyService.currentCurrency || 'AED',
       size: '',
       description: '',
       target_revenue: null as number | null,
@@ -350,7 +358,7 @@ export class DashboardComponent implements OnInit {
   }
 
   onCurrencyChange(): void {
-    this.newBiz.currency = this.selectedCurrency;
+    this.currencyService.setCurrency(this.selectedCurrency);
   }
 
   loadBusinesses(): void {

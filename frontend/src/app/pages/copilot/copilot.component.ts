@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { BusinessService, Business } from '../../core/services/business.service';
 import { AuthService, StoredUser } from '../../core/services/auth.service';
+import { CurrencyService } from '../../core/services/currency.service';
 
 interface ChatMessage {
   sender: 'user' | 'nova';
@@ -225,12 +226,20 @@ export class CopilotComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private businessService: BusinessService,
-    private authService: AuthService
+    private authService: AuthService,
+    public currencyService: CurrencyService
   ) {}
 
   ngOnInit(): void {
     this.currentUser = this.authService.getStoredUser();
     this.authService.currentUser$.subscribe(u => this.currentUser = u);
+
+    this.currencyService.selectedCurrency$.subscribe(curr => {
+      if (this.business) {
+        this.business.currency = curr;
+      }
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
       this.loadBusiness(id);

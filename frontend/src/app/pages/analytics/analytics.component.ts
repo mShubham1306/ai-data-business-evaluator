@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AnalyticsService } from '../../core/services/analytics.service';
 import { BusinessService, Business } from '../../core/services/business.service';
+import { CurrencyService } from '../../core/services/currency.service';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -310,10 +311,20 @@ export class AnalyticsComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private analyticsService: AnalyticsService,
-    private businessService: BusinessService
+    private businessService: BusinessService,
+    public currencyService: CurrencyService
   ) {}
 
   ngOnInit(): void {
+    this.currencyService.selectedCurrency$.subscribe(curr => {
+      if (this.business) {
+        this.business.currency = curr;
+      }
+      if (this.forecasts.length > 0) {
+        setTimeout(() => this.renderForecastChart(), 100);
+      }
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
       this.loadAnalytics(id);

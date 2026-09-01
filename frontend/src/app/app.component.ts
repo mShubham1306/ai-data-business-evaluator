@@ -1,14 +1,16 @@
-// NOVA AI Decision Engine — Production Build Trigger
+// NOVA AI Decision Engine — Production Build
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { AuthService, StoredUser } from './core/services/auth.service';
+import { CurrencyService } from './core/services/currency.service';
 import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, FormsModule],
   template: `
     <div class="app-container">
       <!-- Navbar: hidden on landing page -->
@@ -30,6 +32,16 @@ import { filter } from 'rxjs/operators';
           <a routerLink="/business" routerLinkActive="active" (click)="mobileMenuOpen = false">Business Data</a>
           <a routerLink="/analytics/default" routerLinkActive="active" (click)="mobileMenuOpen = false">Analytics &amp; ML</a>
           <a routerLink="/copilot/default" routerLinkActive="active" (click)="mobileMenuOpen = false">Copilot AI</a>
+
+          <!-- App-Wide Global Currency Selector -->
+          <div class="nav-currency-box">
+            <span class="nav-curr-icon">💱</span>
+            <select [(ngModel)]="currentCurrency" (change)="onCurrencyChange()" class="nav-curr-select">
+              <option *ngFor="let c of currencyService.currencies" [value]="c.code">
+                {{ c.flag }} {{ c.code }} ({{ c.symbol }})
+              </option>
+            </select>
+          </div>
 
           <!-- User Avatar + Name chip -->
           <div class="user-chip" *ngIf="currentUser">
@@ -71,23 +83,13 @@ import { filter } from 'rxjs/operators';
       border-bottom: 1px solid rgba(94, 225, 241, 0.2);
     }
 
-    .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-    }
+    .nav-brand { display: flex; align-items: center; gap: 0.85rem; }
 
     .logo-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
+      width: 38px; height: 38px; border-radius: 50%;
       background: linear-gradient(135deg, #F69F98 0%, #5EE1F1 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      color: #0D1B2A;
-      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; color: #0D1B2A; font-size: 1.1rem;
       box-shadow: 0 4px 12px rgba(246, 159, 152, 0.4);
       animation: pulseGlow 4s infinite ease-in-out;
     }
@@ -97,182 +99,49 @@ import { filter } from 'rxjs/operators';
       50% { box-shadow: 0 0 24px rgba(246, 159, 152, 0.8); }
     }
 
-    .nav-brand h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #FFFFFF;
-      letter-spacing: 0.05em;
-    }
+    .nav-brand h1 { margin: 0; font-size: 1.5rem; color: #FFFFFF; letter-spacing: 0.05em; }
+    .nav-brand p { margin: 0; font-size: 0.72rem; color: #5EE1F1; font-weight: 500; }
 
-    .nav-brand p {
-      margin: 0;
-      font-size: 0.72rem;
-      color: #5EE1F1;
-      font-weight: 500;
-    }
+    .mobile-toggle { display: none; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 0.5rem; }
+    .mobile-toggle span { display: block; width: 24px; height: 2px; background-color: #5EE1F1; border-radius: 2px; transition: all 0.3s; }
 
-    .mobile-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
+    .nav-links { display: flex; gap: 1.2rem; align-items: center; }
+    .nav-links a { color: #E2E8F0; text-decoration: none; font-weight: 500; font-size: 0.88rem; padding: 0.4rem 0.8rem; border-radius: 8px; transition: all 0.25s ease; }
+    .nav-links a:hover { color: #5EE1F1; background: rgba(94, 225, 241, 0.08); transform: translateY(-1px); }
+    .nav-links a.active { color: #0D1B2A; background: linear-gradient(135deg, #F69F98 0%, #FDD5C8 100%); font-weight: 600; box-shadow: 0 4px 14px rgba(246, 159, 152, 0.4); }
 
-    .mobile-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background-color: #5EE1F1;
-      border-radius: 2px;
-      transition: all 0.3s;
+    .nav-currency-box {
+      display: flex; align-items: center; gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(94, 225, 241, 0.3);
+      padding: 0.25rem 0.6rem; border-radius: 20px; transition: all 0.2s;
     }
+    .nav-currency-box:hover { background: rgba(255, 255, 255, 0.18); border-color: var(--sky-blue); }
+    .nav-curr-icon { font-size: 0.82rem; }
+    .nav-curr-select {
+      background: transparent; border: none; color: #5EE1F1; font-weight: 700;
+      font-size: 0.82rem; cursor: pointer; outline: none; font-family: inherit;
+    }
+    .nav-curr-select option { background: #0D1B2A; color: #FFFFFF; }
 
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      align-items: center;
-    }
+    .user-chip { display: flex; align-items: center; gap: 0.65rem; background: rgba(255, 255, 255, 0.06); padding: 0.35rem 0.85rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .user-avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--sky-blue) 0%, var(--coral-pink) 100%); color: var(--deep-navy); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; }
+    .user-info { display: flex; flex-direction: column; text-align: left; }
+    .user-name { font-size: 0.82rem; font-weight: 700; color: #FFFFFF; line-height: 1.2; }
+    .user-email { font-size: 0.7rem; color: var(--slate-gray); }
 
-    .nav-links a {
-      color: #E2E8F0;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.88rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      transition: all 0.25s ease;
-    }
+    .btn-logout { background: transparent; border: 1px solid rgba(246, 159, 152, 0.4); color: #F69F98; padding: 0.4rem 0.95rem; border-radius: 8px; font-weight: 600; font-size: 0.82rem; cursor: pointer; transition: all 0.2s ease; }
+    .btn-logout:hover { background: #F69F98; color: #0D1B2A; }
 
-    .nav-links a:hover {
-      color: #5EE1F1;
-      background: rgba(94, 225, 241, 0.08);
-      transform: translateY(-1px);
-    }
+    .main-content { flex: 1; overflow-y: auto; padding: 1.75rem 2.5rem; background: var(--cream); }
+    .main-content.full-width { padding: 0; }
 
-    .nav-links a.active {
-      color: #0D1B2A;
-      background: linear-gradient(135deg, #F69F98 0%, #FDD5C8 100%);
-      font-weight: 600;
-      box-shadow: 0 4px 14px rgba(246, 159, 152, 0.4);
-    }
-
-    /* ── User chip ── */
-    .user-chip {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      background: rgba(94, 225, 241, 0.08);
-      border: 1px solid rgba(94, 225, 241, 0.2);
-      border-radius: 40px;
-      padding: 0.3rem 0.75rem 0.3rem 0.3rem;
-      transition: all 0.25s;
-    }
-    .user-chip:hover {
-      background: rgba(94, 225, 241, 0.14);
-      border-color: rgba(94, 225, 241, 0.35);
-    }
-    .user-avatar {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #F69F98, #5EE1F1);
-      color: #0D1B2A;
-      font-weight: 800;
-      font-size: 0.68rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .user-info {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .user-name {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #FFFFFF;
-    }
-    .user-email {
-      font-size: 0.65rem;
-      color: #5EE1F1;
-      margin-top: 0.1rem;
-    }
-
-    .btn-logout {
-      background: transparent;
-      color: #F69F98;
-      border: 1px solid #F69F98;
-      padding: 0.45rem 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: all 0.25s ease;
-    }
-
-    .btn-logout:hover {
-      background: #F69F98;
-      color: #0D1B2A;
-      box-shadow: 0 4px 14px rgba(246, 159, 152, 0.4);
-      transform: translateY(-2px);
-    }
-
-    .main-content {
-      flex: 1;
-      overflow-y: auto;
-      padding: 2.2rem 3rem;
-      max-width: 1440px;
-      margin: 0 auto;
-      width: 100%;
-    }
-
-    .main-content.full-width {
-      padding: 0;
-      max-width: 100%;
-      overflow-y: auto;
-    }
-
-    /* Media Queries for Navbar & Content */
-    @media (max-width: 1024px) {
-      .navbar { padding: 0.8rem 1.5rem; }
-      .main-content { padding: 1.5rem 1.5rem; }
-    }
-
-    @media (max-width: 880px) {
+    @media (max-width: 992px) {
       .mobile-toggle { display: flex; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #0D1B2A;
-        flex-direction: column;
-        padding: 1.25rem 1.5rem;
-        gap: 1rem;
-        border-bottom: 2px solid #5EE1F1;
-        box-shadow: 0 15px 30px rgba(0,0,0,0.4);
-      }
-      .nav-links.mobile-open {
-        display: flex;
-      }
-      .nav-links a {
-        width: 100%;
-        text-align: center;
-        padding: 0.65rem;
-      }
-      .user-chip {
-        width: 100%;
-        justify-content: center;
-      }
-      .btn-logout {
-        width: 100%;
-      }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0D1B2A; flex-direction: column; padding: 1.5rem; gap: 1rem; border-bottom: 1px solid rgba(94, 225, 241, 0.2); }
+      .nav-links.mobile-open { display: flex; }
+      .nav-links a { width: 100%; text-align: center; }
+      .user-chip { width: 100%; justify-content: center; }
+      .btn-logout { width: 100%; }
     }
 
     @media (max-width: 480px) {
@@ -288,21 +157,33 @@ export class AppComponent implements OnInit {
   currentUser: StoredUser | null = null;
   showNav = true;
   mobileMenuOpen = false;
+  currentCurrency = 'AED';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    public currencyService: CurrencyService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.authService.currentUser$.subscribe(user => {
       this.currentUser = user;
     });
 
-    // Hide navbar on landing page
+    this.currencyService.selectedCurrency$.subscribe(curr => {
+      this.currentCurrency = curr;
+    });
+
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     ).subscribe((e: any) => {
       this.showNav = e.urlAfterRedirects !== '/';
     });
     this.showNav = this.router.url !== '/';
+  }
+
+  onCurrencyChange(): void {
+    this.currencyService.setCurrency(this.currentCurrency);
   }
 
   getInitials(name: string): string {

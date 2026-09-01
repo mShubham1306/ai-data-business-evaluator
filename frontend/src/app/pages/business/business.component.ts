@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BusinessService, Business, WorldModel } from '../../core/services/business.service';
+import { CurrencyService } from '../../core/services/currency.service';
 import Chart from 'chart.js/auto';
 
 interface FinancialRow {
@@ -361,9 +362,22 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
   private comboChart: Chart | null = null;
   private pieChart: Chart | null = null;
 
-  constructor(private route: ActivatedRoute, private businessService: BusinessService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private businessService: BusinessService,
+    public currencyService: CurrencyService
+  ) {}
 
   ngOnInit(): void {
+    this.currencyService.selectedCurrency$.subscribe(curr => {
+      if (this.business) {
+        this.business.currency = curr;
+      }
+      if (this.financialRows.length > 0 && this.viewSection === 'charts') {
+        setTimeout(() => this.renderCharts(), 100);
+      }
+    });
+
     const id = this.route.snapshot.paramMap.get('id');
     if (id && id !== 'default') {
       this.loadBusiness(id);
