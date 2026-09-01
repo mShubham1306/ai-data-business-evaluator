@@ -30,7 +30,7 @@ class Config:
     MODEL_REGISTRY_PATH = os.path.join(os.path.dirname(__file__), '..', 'models')
     
     # CORS
-    CORS_ORIGINS = os.getenv('CORS_ORIGINS', 'http://localhost:4200').split(',')
+    CORS_ORIGINS = [origin.strip().rstrip('/') for origin in os.getenv('CORS_ORIGINS', '*').split(',') if origin.strip()]
 
 
 class DevelopmentConfig(Config):
