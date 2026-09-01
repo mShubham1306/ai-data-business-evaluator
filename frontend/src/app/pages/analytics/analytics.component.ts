@@ -34,8 +34,8 @@ import Chart from 'chart.js/auto';
                 </option>
               </select>
             </div>
-            <button class="btn btn-ghost" (click)="refreshAll()" [class.spinning]="isLoading">
-              🔄 Refresh Data
+            <button class="btn btn-ghost" (click)="refreshAll()" [disabled]="isLoading">
+              <span class="refresh-icon" [class.spinning]="isLoading">🔄</span> Refresh Data
             </button>
           </div>
         </div>
@@ -643,7 +643,8 @@ import Chart from 'chart.js/auto';
     .btn-ghost:hover { background: var(--cream); }
 
     /* Spinner */
-    .spinning { animation: spin 1s linear infinite; }
+    .refresh-icon { display: inline-block; }
+    .spinning { animation: spin 1s linear infinite; display: inline-block; }
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
     /* Empty state */
