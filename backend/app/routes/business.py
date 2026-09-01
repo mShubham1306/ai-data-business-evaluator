@@ -8,6 +8,7 @@ business_bp = Blueprint('business', __name__, url_prefix='/api/business')
 
 
 @business_bp.route('/', methods=['GET'])
+@business_bp.route('', methods=['GET'])
 @jwt_required()
 def get_businesses():
     """Get all businesses for current user"""
@@ -28,6 +29,7 @@ def get_businesses():
 
 
 @business_bp.route('/', methods=['POST'])
+@business_bp.route('', methods=['POST'])
 @jwt_required()
 def create_business():
     """Create a new business"""
