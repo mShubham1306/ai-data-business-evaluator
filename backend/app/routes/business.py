@@ -223,8 +223,8 @@ def update_world_model_data(business_id):
             if m:
                 if 'revenue' in item:
                     rev_dict[m] = float(item['revenue'])
-                if 'total_costs' in item or 'cogs' in item:
-                    cost_dict[m] = float(item.get('total_costs', item.get('cogs', 0) + item.get('opex', 0)))
+                if 'total_costs' in item or 'costs' in item or 'expenses' in item or 'cogs' in item:
+                    cost_dict[m] = float(item.get('total_costs', item.get('costs', item.get('expenses', item.get('cogs', 0) + item.get('opex', 0)))))
                 if 'net_profit' in item:
                     profit_dict[m] = float(item['net_profit'])
 

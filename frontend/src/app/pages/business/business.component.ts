@@ -510,6 +510,29 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
         const json = JSON.parse(text);
         this.saveFinancialPayload(json);
       } catch (err) {
+        // Try parsing CSV lines
+        const lines = text.split('\n').map((l: string) => l.trim()).filter((l: string) => l.length > 0);
+        if (lines.length > 1 && lines[0].includes(',')) {
+          const headers = lines[0].split(',').map((h: string) => h.trim().toLowerCase());
+          const records: any[] = [];
+          for (let i = 1; i < lines.length; i++) {
+            const vals = lines[i].split(',').map((v: string) => v.trim());
+            const rec: any = {};
+            headers.forEach((h: string, idx: number) => {
+              if (vals[idx] !== undefined) {
+                const num = Number(vals[idx]);
+                rec[h] = isNaN(num) ? vals[idx] : num;
+              }
+            });
+            if (rec.month || rec.period || rec.revenue) {
+              records.push(rec);
+            }
+          }
+          if (records.length > 0) {
+            this.saveFinancialPayload(records);
+            return;
+          }
+        }
         this.ingestMessage = 'File loaded into paste area. Click Process JSON to upload.';
         this.pastedJson = text;
         this.activeTab = 'paste';
@@ -557,11 +580,17 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
     this.savingData = true;
     this.ingestMessage = '';
 
-    this.businessService.updateWorldModelData(this.business.id, { monthly_financials: payload }).subscribe({
+    // If payload is an object containing monthly_financials key, extract it
+    let finData = payload;
+    if (payload && typeof payload === 'object' && !Array.isArray(payload) && payload.monthly_financials) {
+      finData = payload.monthly_financials;
+    }
+
+    this.businessService.updateWorldModelData(this.business.id, { monthly_financials: finData }).subscribe({
       next: (res) => {
         this.savingData = false;
         this.ingestSuccess = true;
-        this.ingestMessage = `✅ Success! Model trained on ${res.records_processed || payload.length} financial records.`;
+        this.ingestMessage = `✅ Success! Model trained on ${res.records_processed || (Array.isArray(finData) ? finData.length : 1)} financial records.`;
         this.businessService.getWorldModel(this.business!.id).subscribe(wm => {
           this.worldModel = wm;
           this.parseFinancialRows(wm);
