@@ -1,0 +1,15 @@
+{
+  "revenue_model": {
+    "r2": 0.996060618455373,
+    "mape": 0.07093290327177318
+  },
+  "profit_model": {
+    "r2": 0.9541012649843923
+  },
+  "anomaly_model": {
+    "test_anomalies_flagged": 83
+  },
+  "train_samples": 14000,
+  "test_samples": 2500,
+  "num_features": 22
+}

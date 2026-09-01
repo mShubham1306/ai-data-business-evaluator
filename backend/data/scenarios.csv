@@ -1,0 +1,1001 @@
+business_id,scenario_id,description,impact_revenue,impact_profit,notes
+UAE_001,SCEN_UAE_001_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_001,SCEN_UAE_001_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_002,SCEN_UAE_002_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_002,SCEN_UAE_002_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_003,SCEN_UAE_003_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_003,SCEN_UAE_003_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_004,SCEN_UAE_004_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_004,SCEN_UAE_004_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_005,SCEN_UAE_005_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_005,SCEN_UAE_005_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_006,SCEN_UAE_006_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_006,SCEN_UAE_006_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_007,SCEN_UAE_007_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_007,SCEN_UAE_007_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_008,SCEN_UAE_008_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_008,SCEN_UAE_008_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_009,SCEN_UAE_009_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_009,SCEN_UAE_009_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_010,SCEN_UAE_010_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_010,SCEN_UAE_010_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_011,SCEN_UAE_011_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_011,SCEN_UAE_011_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_012,SCEN_UAE_012_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_012,SCEN_UAE_012_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_013,SCEN_UAE_013_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_013,SCEN_UAE_013_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_014,SCEN_UAE_014_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_014,SCEN_UAE_014_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_015,SCEN_UAE_015_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_015,SCEN_UAE_015_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_016,SCEN_UAE_016_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_016,SCEN_UAE_016_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_017,SCEN_UAE_017_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_017,SCEN_UAE_017_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_018,SCEN_UAE_018_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_018,SCEN_UAE_018_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_019,SCEN_UAE_019_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_019,SCEN_UAE_019_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_020,SCEN_UAE_020_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_020,SCEN_UAE_020_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_021,SCEN_UAE_021_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_021,SCEN_UAE_021_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_022,SCEN_UAE_022_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_022,SCEN_UAE_022_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_023,SCEN_UAE_023_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_023,SCEN_UAE_023_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_024,SCEN_UAE_024_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_024,SCEN_UAE_024_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_025,SCEN_UAE_025_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_025,SCEN_UAE_025_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_026,SCEN_UAE_026_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_026,SCEN_UAE_026_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_027,SCEN_UAE_027_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_027,SCEN_UAE_027_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_028,SCEN_UAE_028_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_028,SCEN_UAE_028_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_029,SCEN_UAE_029_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_029,SCEN_UAE_029_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_030,SCEN_UAE_030_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_030,SCEN_UAE_030_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_031,SCEN_UAE_031_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_031,SCEN_UAE_031_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_032,SCEN_UAE_032_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_032,SCEN_UAE_032_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_033,SCEN_UAE_033_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_033,SCEN_UAE_033_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_034,SCEN_UAE_034_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_034,SCEN_UAE_034_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_035,SCEN_UAE_035_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_035,SCEN_UAE_035_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_036,SCEN_UAE_036_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_036,SCEN_UAE_036_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_037,SCEN_UAE_037_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_037,SCEN_UAE_037_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_038,SCEN_UAE_038_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_038,SCEN_UAE_038_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_039,SCEN_UAE_039_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_039,SCEN_UAE_039_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_040,SCEN_UAE_040_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_040,SCEN_UAE_040_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_041,SCEN_UAE_041_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_041,SCEN_UAE_041_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_042,SCEN_UAE_042_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_042,SCEN_UAE_042_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_043,SCEN_UAE_043_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_043,SCEN_UAE_043_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_044,SCEN_UAE_044_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_044,SCEN_UAE_044_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_045,SCEN_UAE_045_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_045,SCEN_UAE_045_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_046,SCEN_UAE_046_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_046,SCEN_UAE_046_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_047,SCEN_UAE_047_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_047,SCEN_UAE_047_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_048,SCEN_UAE_048_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_048,SCEN_UAE_048_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_049,SCEN_UAE_049_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_049,SCEN_UAE_049_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_050,SCEN_UAE_050_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_050,SCEN_UAE_050_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_051,SCEN_UAE_051_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_051,SCEN_UAE_051_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_052,SCEN_UAE_052_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_052,SCEN_UAE_052_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_053,SCEN_UAE_053_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_053,SCEN_UAE_053_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_054,SCEN_UAE_054_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_054,SCEN_UAE_054_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_055,SCEN_UAE_055_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_055,SCEN_UAE_055_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_056,SCEN_UAE_056_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_056,SCEN_UAE_056_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_057,SCEN_UAE_057_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_057,SCEN_UAE_057_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_058,SCEN_UAE_058_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_058,SCEN_UAE_058_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_059,SCEN_UAE_059_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_059,SCEN_UAE_059_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_060,SCEN_UAE_060_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_060,SCEN_UAE_060_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_061,SCEN_UAE_061_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_061,SCEN_UAE_061_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_062,SCEN_UAE_062_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_062,SCEN_UAE_062_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_063,SCEN_UAE_063_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_063,SCEN_UAE_063_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_064,SCEN_UAE_064_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_064,SCEN_UAE_064_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_065,SCEN_UAE_065_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_065,SCEN_UAE_065_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_066,SCEN_UAE_066_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_066,SCEN_UAE_066_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_067,SCEN_UAE_067_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_067,SCEN_UAE_067_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_068,SCEN_UAE_068_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_068,SCEN_UAE_068_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_069,SCEN_UAE_069_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_069,SCEN_UAE_069_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_070,SCEN_UAE_070_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_070,SCEN_UAE_070_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_071,SCEN_UAE_071_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_071,SCEN_UAE_071_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_072,SCEN_UAE_072_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_072,SCEN_UAE_072_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_073,SCEN_UAE_073_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_073,SCEN_UAE_073_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_074,SCEN_UAE_074_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_074,SCEN_UAE_074_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_075,SCEN_UAE_075_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_075,SCEN_UAE_075_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_076,SCEN_UAE_076_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_076,SCEN_UAE_076_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_077,SCEN_UAE_077_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_077,SCEN_UAE_077_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_078,SCEN_UAE_078_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_078,SCEN_UAE_078_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_079,SCEN_UAE_079_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_079,SCEN_UAE_079_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_080,SCEN_UAE_080_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_080,SCEN_UAE_080_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_081,SCEN_UAE_081_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_081,SCEN_UAE_081_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_082,SCEN_UAE_082_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_082,SCEN_UAE_082_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_083,SCEN_UAE_083_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_083,SCEN_UAE_083_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_084,SCEN_UAE_084_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_084,SCEN_UAE_084_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_085,SCEN_UAE_085_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_085,SCEN_UAE_085_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_086,SCEN_UAE_086_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_086,SCEN_UAE_086_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_087,SCEN_UAE_087_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_087,SCEN_UAE_087_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_088,SCEN_UAE_088_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_088,SCEN_UAE_088_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_089,SCEN_UAE_089_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_089,SCEN_UAE_089_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_090,SCEN_UAE_090_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_090,SCEN_UAE_090_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_091,SCEN_UAE_091_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_091,SCEN_UAE_091_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_092,SCEN_UAE_092_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_092,SCEN_UAE_092_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_093,SCEN_UAE_093_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_093,SCEN_UAE_093_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_094,SCEN_UAE_094_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_094,SCEN_UAE_094_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_095,SCEN_UAE_095_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_095,SCEN_UAE_095_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_096,SCEN_UAE_096_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_096,SCEN_UAE_096_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_097,SCEN_UAE_097_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_097,SCEN_UAE_097_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_098,SCEN_UAE_098_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_098,SCEN_UAE_098_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_099,SCEN_UAE_099_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_099,SCEN_UAE_099_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_100,SCEN_UAE_100_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_100,SCEN_UAE_100_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_101,SCEN_UAE_101_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_101,SCEN_UAE_101_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_102,SCEN_UAE_102_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_102,SCEN_UAE_102_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_103,SCEN_UAE_103_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_103,SCEN_UAE_103_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_104,SCEN_UAE_104_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_104,SCEN_UAE_104_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_105,SCEN_UAE_105_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_105,SCEN_UAE_105_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_106,SCEN_UAE_106_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_106,SCEN_UAE_106_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_107,SCEN_UAE_107_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_107,SCEN_UAE_107_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_108,SCEN_UAE_108_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_108,SCEN_UAE_108_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_109,SCEN_UAE_109_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_109,SCEN_UAE_109_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_110,SCEN_UAE_110_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_110,SCEN_UAE_110_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_111,SCEN_UAE_111_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_111,SCEN_UAE_111_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_112,SCEN_UAE_112_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_112,SCEN_UAE_112_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_113,SCEN_UAE_113_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_113,SCEN_UAE_113_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_114,SCEN_UAE_114_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_114,SCEN_UAE_114_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_115,SCEN_UAE_115_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_115,SCEN_UAE_115_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_116,SCEN_UAE_116_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_116,SCEN_UAE_116_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_117,SCEN_UAE_117_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_117,SCEN_UAE_117_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_118,SCEN_UAE_118_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_118,SCEN_UAE_118_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_119,SCEN_UAE_119_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_119,SCEN_UAE_119_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_120,SCEN_UAE_120_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_120,SCEN_UAE_120_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_121,SCEN_UAE_121_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_121,SCEN_UAE_121_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_122,SCEN_UAE_122_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_122,SCEN_UAE_122_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_123,SCEN_UAE_123_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_123,SCEN_UAE_123_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_124,SCEN_UAE_124_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_124,SCEN_UAE_124_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_125,SCEN_UAE_125_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_125,SCEN_UAE_125_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_126,SCEN_UAE_126_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_126,SCEN_UAE_126_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_127,SCEN_UAE_127_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_127,SCEN_UAE_127_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_128,SCEN_UAE_128_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_128,SCEN_UAE_128_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_129,SCEN_UAE_129_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_129,SCEN_UAE_129_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_130,SCEN_UAE_130_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_130,SCEN_UAE_130_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_131,SCEN_UAE_131_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_131,SCEN_UAE_131_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_132,SCEN_UAE_132_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_132,SCEN_UAE_132_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_133,SCEN_UAE_133_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_133,SCEN_UAE_133_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_134,SCEN_UAE_134_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_134,SCEN_UAE_134_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_135,SCEN_UAE_135_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_135,SCEN_UAE_135_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_136,SCEN_UAE_136_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_136,SCEN_UAE_136_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_137,SCEN_UAE_137_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_137,SCEN_UAE_137_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_138,SCEN_UAE_138_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_138,SCEN_UAE_138_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_139,SCEN_UAE_139_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_139,SCEN_UAE_139_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_140,SCEN_UAE_140_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_140,SCEN_UAE_140_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_141,SCEN_UAE_141_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_141,SCEN_UAE_141_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_142,SCEN_UAE_142_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_142,SCEN_UAE_142_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_143,SCEN_UAE_143_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_143,SCEN_UAE_143_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_144,SCEN_UAE_144_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_144,SCEN_UAE_144_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_145,SCEN_UAE_145_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_145,SCEN_UAE_145_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_146,SCEN_UAE_146_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_146,SCEN_UAE_146_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_147,SCEN_UAE_147_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_147,SCEN_UAE_147_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_148,SCEN_UAE_148_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_148,SCEN_UAE_148_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_149,SCEN_UAE_149_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_149,SCEN_UAE_149_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_150,SCEN_UAE_150_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_150,SCEN_UAE_150_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_151,SCEN_UAE_151_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_151,SCEN_UAE_151_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_152,SCEN_UAE_152_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_152,SCEN_UAE_152_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_153,SCEN_UAE_153_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_153,SCEN_UAE_153_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_154,SCEN_UAE_154_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_154,SCEN_UAE_154_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_155,SCEN_UAE_155_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_155,SCEN_UAE_155_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_156,SCEN_UAE_156_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_156,SCEN_UAE_156_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_157,SCEN_UAE_157_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_157,SCEN_UAE_157_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_158,SCEN_UAE_158_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_158,SCEN_UAE_158_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_159,SCEN_UAE_159_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_159,SCEN_UAE_159_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_160,SCEN_UAE_160_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_160,SCEN_UAE_160_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_161,SCEN_UAE_161_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_161,SCEN_UAE_161_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_162,SCEN_UAE_162_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_162,SCEN_UAE_162_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_163,SCEN_UAE_163_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_163,SCEN_UAE_163_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_164,SCEN_UAE_164_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_164,SCEN_UAE_164_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_165,SCEN_UAE_165_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_165,SCEN_UAE_165_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_166,SCEN_UAE_166_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_166,SCEN_UAE_166_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_167,SCEN_UAE_167_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_167,SCEN_UAE_167_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_168,SCEN_UAE_168_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_168,SCEN_UAE_168_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_169,SCEN_UAE_169_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_169,SCEN_UAE_169_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_170,SCEN_UAE_170_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_170,SCEN_UAE_170_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_171,SCEN_UAE_171_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_171,SCEN_UAE_171_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_172,SCEN_UAE_172_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_172,SCEN_UAE_172_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_173,SCEN_UAE_173_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_173,SCEN_UAE_173_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_174,SCEN_UAE_174_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_174,SCEN_UAE_174_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_175,SCEN_UAE_175_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_175,SCEN_UAE_175_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_176,SCEN_UAE_176_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_176,SCEN_UAE_176_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_177,SCEN_UAE_177_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_177,SCEN_UAE_177_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_178,SCEN_UAE_178_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_178,SCEN_UAE_178_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_179,SCEN_UAE_179_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_179,SCEN_UAE_179_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_180,SCEN_UAE_180_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_180,SCEN_UAE_180_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_181,SCEN_UAE_181_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_181,SCEN_UAE_181_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_182,SCEN_UAE_182_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_182,SCEN_UAE_182_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_183,SCEN_UAE_183_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_183,SCEN_UAE_183_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_184,SCEN_UAE_184_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_184,SCEN_UAE_184_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_185,SCEN_UAE_185_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_185,SCEN_UAE_185_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_186,SCEN_UAE_186_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_186,SCEN_UAE_186_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_187,SCEN_UAE_187_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_187,SCEN_UAE_187_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_188,SCEN_UAE_188_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_188,SCEN_UAE_188_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_189,SCEN_UAE_189_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_189,SCEN_UAE_189_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_190,SCEN_UAE_190_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_190,SCEN_UAE_190_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_191,SCEN_UAE_191_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_191,SCEN_UAE_191_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_192,SCEN_UAE_192_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_192,SCEN_UAE_192_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_193,SCEN_UAE_193_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_193,SCEN_UAE_193_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_194,SCEN_UAE_194_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_194,SCEN_UAE_194_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_195,SCEN_UAE_195_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_195,SCEN_UAE_195_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_196,SCEN_UAE_196_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_196,SCEN_UAE_196_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_197,SCEN_UAE_197_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_197,SCEN_UAE_197_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_198,SCEN_UAE_198_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_198,SCEN_UAE_198_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_199,SCEN_UAE_199_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_199,SCEN_UAE_199_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_200,SCEN_UAE_200_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_200,SCEN_UAE_200_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_201,SCEN_UAE_201_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_201,SCEN_UAE_201_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_202,SCEN_UAE_202_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_202,SCEN_UAE_202_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_203,SCEN_UAE_203_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_203,SCEN_UAE_203_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_204,SCEN_UAE_204_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_204,SCEN_UAE_204_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_205,SCEN_UAE_205_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_205,SCEN_UAE_205_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_206,SCEN_UAE_206_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_206,SCEN_UAE_206_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_207,SCEN_UAE_207_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_207,SCEN_UAE_207_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_208,SCEN_UAE_208_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_208,SCEN_UAE_208_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_209,SCEN_UAE_209_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_209,SCEN_UAE_209_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_210,SCEN_UAE_210_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_210,SCEN_UAE_210_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_211,SCEN_UAE_211_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_211,SCEN_UAE_211_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_212,SCEN_UAE_212_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_212,SCEN_UAE_212_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_213,SCEN_UAE_213_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_213,SCEN_UAE_213_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_214,SCEN_UAE_214_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_214,SCEN_UAE_214_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_215,SCEN_UAE_215_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_215,SCEN_UAE_215_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_216,SCEN_UAE_216_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_216,SCEN_UAE_216_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_217,SCEN_UAE_217_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_217,SCEN_UAE_217_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_218,SCEN_UAE_218_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_218,SCEN_UAE_218_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_219,SCEN_UAE_219_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_219,SCEN_UAE_219_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_220,SCEN_UAE_220_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_220,SCEN_UAE_220_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_221,SCEN_UAE_221_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_221,SCEN_UAE_221_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_222,SCEN_UAE_222_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_222,SCEN_UAE_222_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_223,SCEN_UAE_223_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_223,SCEN_UAE_223_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_224,SCEN_UAE_224_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_224,SCEN_UAE_224_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_225,SCEN_UAE_225_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_225,SCEN_UAE_225_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_226,SCEN_UAE_226_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_226,SCEN_UAE_226_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_227,SCEN_UAE_227_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_227,SCEN_UAE_227_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_228,SCEN_UAE_228_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_228,SCEN_UAE_228_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_229,SCEN_UAE_229_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_229,SCEN_UAE_229_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_230,SCEN_UAE_230_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_230,SCEN_UAE_230_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_231,SCEN_UAE_231_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_231,SCEN_UAE_231_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_232,SCEN_UAE_232_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_232,SCEN_UAE_232_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_233,SCEN_UAE_233_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_233,SCEN_UAE_233_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_234,SCEN_UAE_234_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_234,SCEN_UAE_234_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_235,SCEN_UAE_235_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_235,SCEN_UAE_235_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_236,SCEN_UAE_236_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_236,SCEN_UAE_236_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_237,SCEN_UAE_237_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_237,SCEN_UAE_237_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_238,SCEN_UAE_238_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_238,SCEN_UAE_238_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_239,SCEN_UAE_239_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_239,SCEN_UAE_239_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_240,SCEN_UAE_240_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_240,SCEN_UAE_240_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_241,SCEN_UAE_241_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_241,SCEN_UAE_241_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_242,SCEN_UAE_242_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_242,SCEN_UAE_242_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_243,SCEN_UAE_243_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_243,SCEN_UAE_243_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_244,SCEN_UAE_244_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_244,SCEN_UAE_244_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_245,SCEN_UAE_245_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_245,SCEN_UAE_245_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_246,SCEN_UAE_246_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_246,SCEN_UAE_246_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_247,SCEN_UAE_247_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_247,SCEN_UAE_247_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_248,SCEN_UAE_248_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_248,SCEN_UAE_248_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_249,SCEN_UAE_249_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_249,SCEN_UAE_249_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_250,SCEN_UAE_250_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_250,SCEN_UAE_250_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_251,SCEN_UAE_251_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_251,SCEN_UAE_251_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_252,SCEN_UAE_252_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_252,SCEN_UAE_252_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_253,SCEN_UAE_253_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_253,SCEN_UAE_253_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_254,SCEN_UAE_254_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_254,SCEN_UAE_254_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_255,SCEN_UAE_255_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_255,SCEN_UAE_255_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_256,SCEN_UAE_256_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_256,SCEN_UAE_256_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_257,SCEN_UAE_257_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_257,SCEN_UAE_257_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_258,SCEN_UAE_258_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_258,SCEN_UAE_258_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_259,SCEN_UAE_259_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_259,SCEN_UAE_259_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_260,SCEN_UAE_260_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_260,SCEN_UAE_260_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_261,SCEN_UAE_261_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_261,SCEN_UAE_261_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_262,SCEN_UAE_262_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_262,SCEN_UAE_262_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_263,SCEN_UAE_263_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_263,SCEN_UAE_263_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_264,SCEN_UAE_264_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_264,SCEN_UAE_264_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_265,SCEN_UAE_265_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_265,SCEN_UAE_265_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_266,SCEN_UAE_266_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_266,SCEN_UAE_266_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_267,SCEN_UAE_267_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_267,SCEN_UAE_267_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_268,SCEN_UAE_268_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_268,SCEN_UAE_268_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_269,SCEN_UAE_269_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_269,SCEN_UAE_269_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_270,SCEN_UAE_270_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_270,SCEN_UAE_270_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_271,SCEN_UAE_271_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_271,SCEN_UAE_271_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_272,SCEN_UAE_272_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_272,SCEN_UAE_272_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_273,SCEN_UAE_273_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_273,SCEN_UAE_273_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_274,SCEN_UAE_274_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_274,SCEN_UAE_274_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_275,SCEN_UAE_275_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_275,SCEN_UAE_275_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_276,SCEN_UAE_276_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_276,SCEN_UAE_276_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_277,SCEN_UAE_277_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_277,SCEN_UAE_277_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_278,SCEN_UAE_278_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_278,SCEN_UAE_278_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_279,SCEN_UAE_279_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_279,SCEN_UAE_279_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_280,SCEN_UAE_280_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_280,SCEN_UAE_280_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_281,SCEN_UAE_281_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_281,SCEN_UAE_281_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_282,SCEN_UAE_282_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_282,SCEN_UAE_282_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_283,SCEN_UAE_283_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_283,SCEN_UAE_283_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_284,SCEN_UAE_284_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_284,SCEN_UAE_284_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_285,SCEN_UAE_285_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_285,SCEN_UAE_285_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_286,SCEN_UAE_286_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_286,SCEN_UAE_286_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_287,SCEN_UAE_287_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_287,SCEN_UAE_287_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_288,SCEN_UAE_288_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_288,SCEN_UAE_288_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_289,SCEN_UAE_289_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_289,SCEN_UAE_289_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_290,SCEN_UAE_290_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_290,SCEN_UAE_290_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_291,SCEN_UAE_291_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_291,SCEN_UAE_291_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_292,SCEN_UAE_292_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_292,SCEN_UAE_292_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_293,SCEN_UAE_293_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_293,SCEN_UAE_293_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_294,SCEN_UAE_294_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_294,SCEN_UAE_294_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_295,SCEN_UAE_295_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_295,SCEN_UAE_295_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_296,SCEN_UAE_296_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_296,SCEN_UAE_296_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_297,SCEN_UAE_297_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_297,SCEN_UAE_297_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_298,SCEN_UAE_298_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_298,SCEN_UAE_298_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_299,SCEN_UAE_299_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_299,SCEN_UAE_299_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_300,SCEN_UAE_300_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_300,SCEN_UAE_300_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_301,SCEN_UAE_301_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_301,SCEN_UAE_301_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_302,SCEN_UAE_302_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_302,SCEN_UAE_302_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_303,SCEN_UAE_303_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_303,SCEN_UAE_303_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_304,SCEN_UAE_304_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_304,SCEN_UAE_304_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_305,SCEN_UAE_305_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_305,SCEN_UAE_305_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_306,SCEN_UAE_306_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_306,SCEN_UAE_306_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_307,SCEN_UAE_307_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_307,SCEN_UAE_307_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_308,SCEN_UAE_308_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_308,SCEN_UAE_308_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_309,SCEN_UAE_309_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_309,SCEN_UAE_309_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_310,SCEN_UAE_310_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_310,SCEN_UAE_310_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_311,SCEN_UAE_311_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_311,SCEN_UAE_311_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_312,SCEN_UAE_312_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_312,SCEN_UAE_312_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_313,SCEN_UAE_313_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_313,SCEN_UAE_313_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_314,SCEN_UAE_314_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_314,SCEN_UAE_314_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_315,SCEN_UAE_315_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_315,SCEN_UAE_315_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_316,SCEN_UAE_316_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_316,SCEN_UAE_316_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_317,SCEN_UAE_317_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_317,SCEN_UAE_317_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_318,SCEN_UAE_318_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_318,SCEN_UAE_318_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_319,SCEN_UAE_319_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_319,SCEN_UAE_319_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_320,SCEN_UAE_320_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_320,SCEN_UAE_320_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_321,SCEN_UAE_321_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_321,SCEN_UAE_321_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_322,SCEN_UAE_322_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_322,SCEN_UAE_322_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_323,SCEN_UAE_323_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_323,SCEN_UAE_323_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_324,SCEN_UAE_324_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_324,SCEN_UAE_324_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_325,SCEN_UAE_325_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_325,SCEN_UAE_325_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_326,SCEN_UAE_326_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_326,SCEN_UAE_326_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_327,SCEN_UAE_327_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_327,SCEN_UAE_327_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_328,SCEN_UAE_328_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_328,SCEN_UAE_328_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_329,SCEN_UAE_329_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_329,SCEN_UAE_329_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_330,SCEN_UAE_330_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_330,SCEN_UAE_330_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_331,SCEN_UAE_331_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_331,SCEN_UAE_331_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_332,SCEN_UAE_332_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_332,SCEN_UAE_332_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_333,SCEN_UAE_333_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_333,SCEN_UAE_333_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_334,SCEN_UAE_334_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_334,SCEN_UAE_334_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_335,SCEN_UAE_335_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_335,SCEN_UAE_335_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_336,SCEN_UAE_336_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_336,SCEN_UAE_336_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_337,SCEN_UAE_337_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_337,SCEN_UAE_337_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_338,SCEN_UAE_338_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_338,SCEN_UAE_338_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_339,SCEN_UAE_339_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_339,SCEN_UAE_339_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_340,SCEN_UAE_340_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_340,SCEN_UAE_340_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_341,SCEN_UAE_341_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_341,SCEN_UAE_341_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_342,SCEN_UAE_342_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_342,SCEN_UAE_342_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_343,SCEN_UAE_343_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_343,SCEN_UAE_343_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_344,SCEN_UAE_344_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_344,SCEN_UAE_344_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_345,SCEN_UAE_345_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_345,SCEN_UAE_345_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_346,SCEN_UAE_346_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_346,SCEN_UAE_346_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_347,SCEN_UAE_347_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_347,SCEN_UAE_347_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_348,SCEN_UAE_348_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_348,SCEN_UAE_348_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_349,SCEN_UAE_349_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_349,SCEN_UAE_349_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_350,SCEN_UAE_350_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_350,SCEN_UAE_350_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_351,SCEN_UAE_351_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_351,SCEN_UAE_351_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_352,SCEN_UAE_352_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_352,SCEN_UAE_352_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_353,SCEN_UAE_353_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_353,SCEN_UAE_353_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_354,SCEN_UAE_354_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_354,SCEN_UAE_354_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_355,SCEN_UAE_355_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_355,SCEN_UAE_355_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_356,SCEN_UAE_356_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_356,SCEN_UAE_356_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_357,SCEN_UAE_357_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_357,SCEN_UAE_357_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_358,SCEN_UAE_358_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_358,SCEN_UAE_358_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_359,SCEN_UAE_359_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_359,SCEN_UAE_359_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_360,SCEN_UAE_360_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_360,SCEN_UAE_360_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_361,SCEN_UAE_361_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_361,SCEN_UAE_361_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_362,SCEN_UAE_362_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_362,SCEN_UAE_362_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_363,SCEN_UAE_363_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_363,SCEN_UAE_363_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_364,SCEN_UAE_364_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_364,SCEN_UAE_364_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_365,SCEN_UAE_365_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_365,SCEN_UAE_365_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_366,SCEN_UAE_366_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_366,SCEN_UAE_366_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_367,SCEN_UAE_367_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_367,SCEN_UAE_367_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_368,SCEN_UAE_368_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_368,SCEN_UAE_368_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_369,SCEN_UAE_369_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_369,SCEN_UAE_369_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_370,SCEN_UAE_370_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_370,SCEN_UAE_370_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_371,SCEN_UAE_371_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_371,SCEN_UAE_371_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_372,SCEN_UAE_372_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_372,SCEN_UAE_372_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_373,SCEN_UAE_373_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_373,SCEN_UAE_373_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_374,SCEN_UAE_374_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_374,SCEN_UAE_374_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_375,SCEN_UAE_375_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_375,SCEN_UAE_375_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_376,SCEN_UAE_376_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_376,SCEN_UAE_376_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_377,SCEN_UAE_377_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_377,SCEN_UAE_377_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_378,SCEN_UAE_378_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_378,SCEN_UAE_378_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_379,SCEN_UAE_379_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_379,SCEN_UAE_379_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_380,SCEN_UAE_380_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_380,SCEN_UAE_380_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_381,SCEN_UAE_381_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_381,SCEN_UAE_381_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_382,SCEN_UAE_382_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_382,SCEN_UAE_382_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_383,SCEN_UAE_383_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_383,SCEN_UAE_383_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_384,SCEN_UAE_384_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_384,SCEN_UAE_384_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_385,SCEN_UAE_385_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_385,SCEN_UAE_385_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_386,SCEN_UAE_386_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_386,SCEN_UAE_386_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_387,SCEN_UAE_387_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_387,SCEN_UAE_387_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_388,SCEN_UAE_388_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_388,SCEN_UAE_388_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_389,SCEN_UAE_389_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_389,SCEN_UAE_389_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_390,SCEN_UAE_390_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_390,SCEN_UAE_390_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_391,SCEN_UAE_391_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_391,SCEN_UAE_391_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_392,SCEN_UAE_392_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_392,SCEN_UAE_392_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_393,SCEN_UAE_393_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_393,SCEN_UAE_393_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_394,SCEN_UAE_394_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_394,SCEN_UAE_394_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_395,SCEN_UAE_395_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_395,SCEN_UAE_395_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_396,SCEN_UAE_396_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_396,SCEN_UAE_396_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_397,SCEN_UAE_397_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_397,SCEN_UAE_397_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_398,SCEN_UAE_398_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_398,SCEN_UAE_398_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_399,SCEN_UAE_399_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_399,SCEN_UAE_399_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_400,SCEN_UAE_400_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_400,SCEN_UAE_400_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_401,SCEN_UAE_401_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_401,SCEN_UAE_401_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_402,SCEN_UAE_402_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_402,SCEN_UAE_402_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_403,SCEN_UAE_403_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_403,SCEN_UAE_403_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_404,SCEN_UAE_404_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_404,SCEN_UAE_404_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_405,SCEN_UAE_405_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_405,SCEN_UAE_405_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_406,SCEN_UAE_406_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_406,SCEN_UAE_406_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_407,SCEN_UAE_407_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_407,SCEN_UAE_407_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_408,SCEN_UAE_408_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_408,SCEN_UAE_408_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_409,SCEN_UAE_409_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_409,SCEN_UAE_409_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_410,SCEN_UAE_410_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_410,SCEN_UAE_410_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_411,SCEN_UAE_411_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_411,SCEN_UAE_411_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_412,SCEN_UAE_412_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_412,SCEN_UAE_412_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_413,SCEN_UAE_413_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_413,SCEN_UAE_413_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_414,SCEN_UAE_414_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_414,SCEN_UAE_414_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_415,SCEN_UAE_415_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_415,SCEN_UAE_415_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_416,SCEN_UAE_416_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_416,SCEN_UAE_416_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_417,SCEN_UAE_417_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_417,SCEN_UAE_417_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_418,SCEN_UAE_418_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_418,SCEN_UAE_418_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_419,SCEN_UAE_419_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_419,SCEN_UAE_419_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_420,SCEN_UAE_420_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_420,SCEN_UAE_420_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_421,SCEN_UAE_421_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_421,SCEN_UAE_421_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_422,SCEN_UAE_422_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_422,SCEN_UAE_422_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_423,SCEN_UAE_423_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_423,SCEN_UAE_423_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_424,SCEN_UAE_424_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_424,SCEN_UAE_424_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_425,SCEN_UAE_425_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_425,SCEN_UAE_425_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_426,SCEN_UAE_426_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_426,SCEN_UAE_426_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_427,SCEN_UAE_427_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_427,SCEN_UAE_427_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_428,SCEN_UAE_428_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_428,SCEN_UAE_428_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_429,SCEN_UAE_429_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_429,SCEN_UAE_429_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_430,SCEN_UAE_430_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_430,SCEN_UAE_430_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_431,SCEN_UAE_431_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_431,SCEN_UAE_431_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_432,SCEN_UAE_432_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_432,SCEN_UAE_432_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_433,SCEN_UAE_433_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_433,SCEN_UAE_433_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_434,SCEN_UAE_434_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_434,SCEN_UAE_434_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_435,SCEN_UAE_435_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_435,SCEN_UAE_435_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_436,SCEN_UAE_436_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_436,SCEN_UAE_436_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_437,SCEN_UAE_437_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_437,SCEN_UAE_437_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_438,SCEN_UAE_438_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_438,SCEN_UAE_438_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_439,SCEN_UAE_439_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_439,SCEN_UAE_439_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_440,SCEN_UAE_440_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_440,SCEN_UAE_440_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_441,SCEN_UAE_441_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_441,SCEN_UAE_441_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_442,SCEN_UAE_442_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_442,SCEN_UAE_442_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_443,SCEN_UAE_443_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_443,SCEN_UAE_443_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_444,SCEN_UAE_444_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_444,SCEN_UAE_444_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_445,SCEN_UAE_445_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_445,SCEN_UAE_445_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_446,SCEN_UAE_446_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_446,SCEN_UAE_446_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_447,SCEN_UAE_447_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_447,SCEN_UAE_447_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_448,SCEN_UAE_448_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_448,SCEN_UAE_448_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_449,SCEN_UAE_449_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_449,SCEN_UAE_449_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_450,SCEN_UAE_450_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_450,SCEN_UAE_450_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_451,SCEN_UAE_451_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_451,SCEN_UAE_451_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_452,SCEN_UAE_452_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_452,SCEN_UAE_452_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_453,SCEN_UAE_453_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_453,SCEN_UAE_453_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_454,SCEN_UAE_454_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_454,SCEN_UAE_454_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_455,SCEN_UAE_455_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_455,SCEN_UAE_455_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_456,SCEN_UAE_456_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_456,SCEN_UAE_456_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_457,SCEN_UAE_457_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_457,SCEN_UAE_457_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_458,SCEN_UAE_458_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_458,SCEN_UAE_458_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_459,SCEN_UAE_459_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_459,SCEN_UAE_459_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_460,SCEN_UAE_460_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_460,SCEN_UAE_460_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_461,SCEN_UAE_461_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_461,SCEN_UAE_461_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_462,SCEN_UAE_462_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_462,SCEN_UAE_462_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_463,SCEN_UAE_463_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_463,SCEN_UAE_463_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_464,SCEN_UAE_464_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_464,SCEN_UAE_464_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_465,SCEN_UAE_465_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_465,SCEN_UAE_465_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_466,SCEN_UAE_466_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_466,SCEN_UAE_466_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_467,SCEN_UAE_467_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_467,SCEN_UAE_467_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_468,SCEN_UAE_468_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_468,SCEN_UAE_468_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_469,SCEN_UAE_469_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_469,SCEN_UAE_469_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_470,SCEN_UAE_470_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_470,SCEN_UAE_470_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_471,SCEN_UAE_471_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_471,SCEN_UAE_471_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_472,SCEN_UAE_472_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_472,SCEN_UAE_472_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_473,SCEN_UAE_473_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_473,SCEN_UAE_473_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_474,SCEN_UAE_474_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_474,SCEN_UAE_474_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_475,SCEN_UAE_475_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_475,SCEN_UAE_475_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_476,SCEN_UAE_476_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_476,SCEN_UAE_476_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_477,SCEN_UAE_477_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_477,SCEN_UAE_477_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_478,SCEN_UAE_478_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_478,SCEN_UAE_478_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_479,SCEN_UAE_479_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_479,SCEN_UAE_479_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_480,SCEN_UAE_480_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_480,SCEN_UAE_480_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_481,SCEN_UAE_481_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_481,SCEN_UAE_481_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_482,SCEN_UAE_482_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_482,SCEN_UAE_482_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_483,SCEN_UAE_483_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_483,SCEN_UAE_483_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_484,SCEN_UAE_484_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_484,SCEN_UAE_484_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_485,SCEN_UAE_485_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_485,SCEN_UAE_485_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_486,SCEN_UAE_486_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_486,SCEN_UAE_486_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_487,SCEN_UAE_487_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_487,SCEN_UAE_487_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_488,SCEN_UAE_488_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_488,SCEN_UAE_488_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_489,SCEN_UAE_489_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_489,SCEN_UAE_489_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_490,SCEN_UAE_490_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_490,SCEN_UAE_490_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_491,SCEN_UAE_491_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_491,SCEN_UAE_491_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_492,SCEN_UAE_492_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_492,SCEN_UAE_492_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_493,SCEN_UAE_493_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_493,SCEN_UAE_493_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_494,SCEN_UAE_494_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_494,SCEN_UAE_494_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_495,SCEN_UAE_495_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_495,SCEN_UAE_495_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_496,SCEN_UAE_496_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_496,SCEN_UAE_496_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_497,SCEN_UAE_497_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_497,SCEN_UAE_497_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_498,SCEN_UAE_498_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_498,SCEN_UAE_498_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_499,SCEN_UAE_499_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_499,SCEN_UAE_499_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
+UAE_500,SCEN_UAE_500_A,+25% Ad Spend Growth Vector,18.5,14.2,Assumes constant lead CAC efficiency.
+UAE_500,SCEN_UAE_500_B,Premium Price Adjustment (+10%),12.0,22.0,Assumes price elasticity of -0.30.
