@@ -1,6 +1,6 @@
 """API Routes - Data Upload and Verification"""
 from flask import Blueprint, request, jsonify, current_app
-from flask_jwt_extended import jwt_required, get_jwt_identity
+from app.auth_helper import jwt_required_compat as jwt_required, get_jwt_identity_compat as get_jwt_identity
 from werkzeug.utils import secure_filename
 from app.models import Business, DataUpload
 from app.services.data_service import DataProcessingService, DataValidationService

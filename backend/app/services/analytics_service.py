@@ -147,10 +147,8 @@ class MLService:
     
     @staticmethod
     def forecast_revenue(business_id, periods=12):
-        """Forecast revenue using trained Random Forest ML model or trend extrapolation"""
         from flask import current_app
         import os
-        import joblib
         
         world_model = WorldModel.query.filter_by(business_id=business_id).first()
         if not world_model or not world_model.revenue:
@@ -159,14 +157,16 @@ class MLService:
         revenue_values = list(world_model.revenue.values())
         if len(revenue_values) < 2:
             return None
-        
+            
         models_dir = current_app.config.get('MODEL_REGISTRY_PATH', 'models')
         model_path = os.path.join(models_dir, 'revenue_forecast_model.joblib')
         scaler_path = os.path.join(models_dir, 'feature_scaler.joblib')
+        json_model_path = os.path.join(models_dir, 'model_params.json')
         
-        # If trained ML model exists, use it
+        # 1. Scikit-Learn Joblib Model Inference
         if os.path.exists(model_path) and os.path.exists(scaler_path):
             try:
+                import joblib
                 model = joblib.load(model_path)
                 scaler = joblib.load(scaler_path)
                 
@@ -175,7 +175,6 @@ class MLService:
                 lag_2 = revenue_values[-2] if len(revenue_values) >= 2 else lag_1
                 lag_3 = revenue_values[-3] if len(revenue_values) >= 3 else lag_2
                 
-                # Mock feature vector for prediction step
                 feat_vector = np.array([[
                     12, 150, 45, 10, 6.67, 8000, 17000, 2500, 800, 20.0,
                     80.0, 3.5, 4.2, lag_1, lag_2, lag_3, lag_1 * 0.25, 150, 8000, 0.05, 0.25, 0.066
@@ -197,9 +196,35 @@ class MLService:
                     })
                 return forecasts
             except Exception as e:
-                print(f"[ML Model Inference Fallback]: {e}")
+                print(f"[ML Joblib Inference Fallback]: {e}")
+
+        # 2. Fitted Numpy Linear Regression Model Inference
+        if os.path.exists(json_model_path):
+            try:
+                import json
+                with open(json_model_path, 'r') as f:
+                    m_params = json.load(f)
+                slope = m_params.get('slope', 0)
+                intercept = m_params.get('intercept', revenue_values[-1])
+                n_dp = m_params.get('data_points', len(revenue_values))
+                
+                forecasts = []
+                for i in range(1, periods + 1):
+                    x_step = n_dp + i - 1
+                    val = max(0, slope * x_step + intercept)
+                    confidence = max(50, 85 - (i * 2))
+                    forecasts.append({
+                        'period': i,
+                        'forecast': val,
+                        'lower_bound': val * 0.88,
+                        'upper_bound': val * 1.12,
+                        'confidence': confidence
+                    })
+                return forecasts
+            except Exception as e:
+                print(f"[ML JSON Model Inference Fallback]: {e}")
         
-        # Fallback extrapolation
+        # 3. Dynamic Trend Extrapolation Fallback
         recent_values = revenue_values[-3:] if len(revenue_values) >= 3 else revenue_values
         mean = np.mean(recent_values)
         trend = (recent_values[-1] - recent_values[0]) / len(recent_values)
@@ -223,9 +248,6 @@ class MLService:
         """Retrain Random Forest and Isolation Forest models dynamically using current business inputs"""
         from flask import current_app
         import os
-        import joblib
-        from sklearn.ensemble import RandomForestRegressor, IsolationForest
-        from sklearn.preprocessing import StandardScaler
         
         world_model = WorldModel.query.filter_by(business_id=business_id).first()
         if not world_model or not world_model.revenue:
@@ -252,22 +274,51 @@ class MLService:
         X = np.array(X_rows)
         y = np.array(y_rows)
         
-        scaler = StandardScaler()
-        X_scaled = scaler.fit_transform(X)
-        
-        model = RandomForestRegressor(n_estimators=50, max_depth=10, random_state=42)
-        model.fit(X_scaled, y)
-        
-        anomaly_model = IsolationForest(contamination=0.05, random_state=42)
-        anomaly_model.fit(X_scaled)
-        
-        models_dir = current_app.config.get('MODEL_REGISTRY_PATH', 'models')
-        os.makedirs(models_dir, exist_ok=True)
-        joblib.dump(model, os.path.join(models_dir, 'revenue_forecast_model.joblib'))
-        joblib.dump(scaler, os.path.join(models_dir, 'feature_scaler.joblib'))
-        joblib.dump(anomaly_model, os.path.join(models_dir, 'anomaly_detector.joblib'))
-        
-        print(f"[NOVA ML Pipeline]: Trained and saved updated models on current input for Business ID: {business_id}")
+        try:
+            import joblib
+            from sklearn.ensemble import RandomForestRegressor, IsolationForest
+            from sklearn.preprocessing import StandardScaler
+            
+            scaler = StandardScaler()
+            X_scaled = scaler.fit_transform(X)
+            
+            model = RandomForestRegressor(n_estimators=50, max_depth=10, random_state=42)
+            model.fit(X_scaled, y)
+            
+            anomaly_model = IsolationForest(contamination=0.05, random_state=42)
+            anomaly_model.fit(X_scaled)
+            
+            models_dir = current_app.config.get('MODEL_REGISTRY_PATH', 'models')
+            os.makedirs(models_dir, exist_ok=True)
+            joblib.dump(model, os.path.join(models_dir, 'revenue_forecast_model.joblib'))
+            joblib.dump(scaler, os.path.join(models_dir, 'feature_scaler.joblib'))
+            joblib.dump(anomaly_model, os.path.join(models_dir, 'anomaly_detector.joblib'))
+            print(f"[NOVA ML Pipeline]: Trained Scikit-Learn models for Business ID: {business_id}")
+        except ImportError:
+            import json
+            # Fit Numpy Linear Trend Regression model (Slope + Intercept)
+            n_samples = len(y)
+            x_idx = np.arange(n_samples)
+            if n_samples > 1:
+                slope, intercept = np.polyfit(x_idx, y, 1)
+            else:
+                slope, intercept = 0, float(y[0])
+            
+            model_params = {
+                'slope': float(slope),
+                'intercept': float(intercept),
+                'last_value': float(revenue_vals[-1]),
+                'mean_value': float(np.mean(revenue_vals)),
+                'std_value': float(np.std(revenue_vals)) if n_samples > 1 else 0.0,
+                'business_id': business_id,
+                'data_points': n_samples
+            }
+            models_dir = current_app.config.get('MODEL_REGISTRY_PATH', 'models')
+            os.makedirs(models_dir, exist_ok=True)
+            with open(os.path.join(models_dir, 'model_params.json'), 'w') as f:
+                json.dump(model_params, f)
+            print(f"[NOVA ML Pipeline]: Trained Numpy Linear Regression model for Business ID: {business_id} (slope={slope:.2f}, intercept={intercept:.2f})")
+            
         return True
 
     
