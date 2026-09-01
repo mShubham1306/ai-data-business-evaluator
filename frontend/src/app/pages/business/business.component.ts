@@ -32,7 +32,7 @@ interface FinancialRow {
         <div class="title-row">
           <h2>{{ business.name }}</h2>
           <span class="badge">{{ business.industry || 'Business Profile' }}</span>
-          <span class="currency-badge">Currency: {{ business.currency || 'AED' }}</span>
+          <span class="currency-badge">Currency: {{ business.currency || 'USD' }}</span>
         </div>
         <p class="desc mt-1">Data Ingestion Hub, Multi-Chart Visualizations &amp; Performance Engine</p>
       </div>
@@ -41,19 +41,19 @@ interface FinancialRow {
       <div class="grid grid-4 mb-4" *ngIf="financialRows.length > 0">
         <div class="wm-stat 3d-mini">
           <span class="wm-label">Latest Revenue</span>
-          <span class="wm-val">{{ business.currency || 'AED' }} {{ latestRevenue | number:'1.0-0' }}</span>
+          <span class="wm-val">{{ business.currency || 'USD' }} {{ latestRevenue | number:'1.0-0' }}</span>
           <span class="wm-sub">Current Month</span>
         </div>
 
         <div class="wm-stat 3d-mini">
           <span class="wm-label">Latest Operating Costs</span>
-          <span class="wm-val text-coral">{{ business.currency || 'AED' }} {{ latestCosts | number:'1.0-0' }}</span>
+          <span class="wm-val text-coral">{{ business.currency || 'USD' }} {{ latestCosts | number:'1.0-0' }}</span>
           <span class="wm-sub">Total Expenses</span>
         </div>
 
         <div class="wm-stat 3d-mini">
           <span class="wm-label">Latest Net Profit</span>
-          <span class="wm-val text-success">{{ business.currency || 'AED' }} {{ latestProfit | number:'1.0-0' }}</span>
+          <span class="wm-val text-success">{{ business.currency || 'USD' }} {{ latestProfit | number:'1.0-0' }}</span>
           <span class="wm-sub">Margin: {{ latestMargin | number:'1.1-1' }}%</span>
         </div>
 
@@ -118,7 +118,7 @@ interface FinancialRow {
               <thead>
                 <tr>
                   <th>Month</th>
-                  <th>Revenue ({{ business.currency || 'AED' }})</th>
+                  <th>Revenue ({{ business.currency || 'USD' }})</th>
                   <th>Total Costs</th>
                   <th>Net Profit</th>
                   <th>MoM Diff / Growth</th>
@@ -128,12 +128,12 @@ interface FinancialRow {
               <tbody>
                 <tr *ngFor="let row of financialRows">
                   <td><strong>{{ row.month }}</strong></td>
-                  <td><strong class="text-navy">{{ business.currency || 'AED' }} {{ row.revenue | number:'1.2-2' }}</strong></td>
-                  <td class="text-muted">{{ business.currency || 'AED' }} {{ row.total_costs | number:'1.2-2' }}</td>
-                  <td><strong class="text-success">{{ business.currency || 'AED' }} {{ row.net_profit | number:'1.2-2' }}</strong></td>
+                  <td><strong class="text-navy">{{ business.currency || 'USD' }} {{ row.revenue | number:'1.2-2' }}</strong></td>
+                  <td class="text-muted">{{ business.currency || 'USD' }} {{ row.total_costs | number:'1.2-2' }}</td>
+                  <td><strong class="text-success">{{ business.currency || 'USD' }} {{ row.net_profit | number:'1.2-2' }}</strong></td>
                   <td>
                     <span class="diff-chip" [class.diff-up]="row.revDiff >= 0" [class.diff-down]="row.revDiff < 0" *ngIf="row.revDiff !== 0">
-                      {{ row.revDiff >= 0 ? '+' : '' }}{{ business.currency || 'AED' }} {{ row.revDiff | number:'1.0-0' }}
+                      {{ row.revDiff >= 0 ? '+' : '' }}{{ business.currency || 'USD' }} {{ row.revDiff | number:'1.0-0' }}
                       ({{ row.revDiffPct >= 0 ? '+' : '' }}{{ row.revDiffPct | number:'1.1-1' }}%)
                     </span>
                     <span class="diff-chip diff-neutral" *ngIf="row.revDiff === 0">Baseline</span>
@@ -208,11 +208,11 @@ interface FinancialRow {
                 <input type="text" [(ngModel)]="newMonth.month" class="input" placeholder="2025-05" />
               </div>
               <div class="form-group">
-                <label>Revenue ({{ business.currency || 'AED' }})</label>
+                <label>Revenue ({{ business.currency || 'USD' }})</label>
                 <input type="number" [(ngModel)]="newMonth.revenue" class="input" placeholder="185000" />
               </div>
               <div class="form-group">
-                <label>Total Costs ({{ business.currency || 'AED' }})</label>
+                <label>Total Costs ({{ business.currency || 'USD' }})</label>
                 <input type="number" [(ngModel)]="newMonth.total_costs" class="input" placeholder="85000" />
               </div>
             </div>
@@ -242,7 +242,7 @@ interface FinancialRow {
               <thead>
                 <tr>
                   <th>Product / Service Line</th>
-                  <th>Price ({{ business.currency || 'AED' }})</th>
+                  <th>Price ({{ business.currency || 'USD' }})</th>
                   <th>Unit Cost</th>
                   <th>Profit Margin (%)</th>
                 </tr>
@@ -250,8 +250,8 @@ interface FinancialRow {
               <tbody>
                 <tr *ngFor="let p of worldModel?.products">
                   <td><strong>{{ p.name }}</strong></td>
-                  <td>{{ business.currency || 'AED' }} {{ p.price_aed | number:'1.0-0' }}</td>
-                  <td>{{ business.currency || 'AED' }} {{ p.cost_aed | number:'1.0-0' }}</td>
+                  <td>{{ business.currency || 'USD' }} {{ p.price_aed | number:'1.0-0' }}</td>
+                  <td>{{ business.currency || 'USD' }} {{ p.cost_aed | number:'1.0-0' }}</td>
                   <td>
                     <span class="margin-badge" [class.high]="p.margin >= 40">{{ p.margin }}%</span>
                   </td>
@@ -552,7 +552,7 @@ export class BusinessComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.financialRows.length === 0) return;
     this.destroyCharts();
 
-    const cur = this.business?.currency || 'AED';
+    const cur = this.business?.currency || 'USD';
 
     // Chart 1: Bar & Line Combo Chart
     if (this.comboChartCanvas) {

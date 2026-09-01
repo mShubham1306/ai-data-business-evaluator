@@ -32,7 +32,7 @@ class Business(db.Model):
     name = db.Column(db.String(255), nullable=False)
     industry = db.Column(db.String(100))
     country = db.Column(db.String(100))
-    currency = db.Column(db.String(10), default='AED')
+    currency = db.Column(db.String(10), default='USD')
     size = db.Column(db.String(50))  # Small, Medium, Large
     founded_year = db.Column(db.Integer)
     description = db.Column(db.Text)

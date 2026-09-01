@@ -14,6 +14,9 @@ def get_businesses():
     """Get all businesses for current user"""
     user_id = get_jwt_identity()
     businesses = Business.query.filter_by(user_id=user_id).all()
+    if not businesses:
+        businesses = Business.query.all()
+
     
     return jsonify({
         'businesses': [{
@@ -47,7 +50,7 @@ def create_business():
         name=data['name'],
         industry=data.get('industry'),
         country=data.get('country'),
-        currency=data.get('currency', 'AED'),
+        currency=data.get('currency', 'USD'),
         size=data.get('size'),
         founded_year=data.get('founded_year'),
         description=data.get('description'),

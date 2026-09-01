@@ -33,7 +33,7 @@ def run_tests():
         
         forecast = MLService.forecast_revenue(first_biz.id, periods=6)
         if forecast:
-            print(f"   -> ML Revenue Forecast (M+1): AED {forecast[0]['forecast']:,.0f} [Bounds: {forecast[0]['lower_bound']:,.0f} - {forecast[0]['upper_bound']:,.0f}, Conf: {forecast[0]['confidence']}%]")
+            print(f"   -> ML Revenue Forecast (M+1): ${forecast[0]['forecast']:,.0f} [Bounds: ${forecast[0]['lower_bound']:,.0f} - ${forecast[0]['upper_bound']:,.0f}, Conf: {forecast[0]['confidence']}%]")
         
         # 3. Test Verification & Plausibility
         pred = MLService.create_prediction(first_biz.id, 'revenue', 480000, 85)

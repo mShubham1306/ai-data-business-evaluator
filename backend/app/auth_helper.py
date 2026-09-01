@@ -20,31 +20,24 @@ def create_demo_token(identity):
     return f"demo-jwt-token-for-{identity}"
 
 def jwt_required_compat():
+    """Pass-through decorator - auth is removed for seamless direct access"""
     def decorator(fn):
         @wraps(fn)
         def wrapper(*args, **kwargs):
             if request.method == 'OPTIONS':
                 return '', 200
-            if HAS_JWT:
-                auth_header = request.headers.get('Authorization')
-                if auth_header and 'Bearer' in auth_header and auth_header != 'Bearer null' and auth_header != 'Bearer undefined':
-                    try:
-                        return _jwt_required()(fn)(*args, **kwargs)
-                    except Exception:
-                        # If token expired or invalid, fallback to demo mode instead of crashing
-                        pass
             return fn(*args, **kwargs)
         return wrapper
     return decorator
 
 def get_jwt_identity_compat():
-    if HAS_JWT:
-        try:
-            identity = _get_jwt_identity()
-            if identity:
-                return identity
-        except Exception:
-            pass
+    """Returns default demo user ID so data queries work without login"""
     from app.models import User
-    demo_user = User.query.filter_by(email='demo@nova.ai').first()
-    return demo_user.id if demo_user else 'demo-user-id'
+    try:
+        demo_user = User.query.filter_by(email='demo@nova.ai').first()
+        if demo_user:
+            return demo_user.id
+    except Exception:
+        pass
+    return 'demo-user-id'
+

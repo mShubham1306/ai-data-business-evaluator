@@ -180,16 +180,37 @@ def get_segments(business_id):
     return jsonify({'segments': segments}), 200
 
 
+@analytics_bp.route('/<business_id>/competitors', methods=['GET'])
+@jwt_required()
+def get_competitor_benchmarks(business_id):
+    """Get Competitor AI Monitor & GCC Benchmarks (Requirement 18)"""
+    benchmarks = AnalyticsService.get_competitor_benchmarks(business_id)
+    return jsonify(benchmarks), 200
+
+
+@ml_bp.route('/<business_id>/outcomes', methods=['POST'])
+@jwt_required()
+def record_outcome(business_id):
+    """Record actual prediction outcome and trigger retraining loop (P5)"""
+    data = request.get_json() or {}
+    prediction_id = data.get('prediction_id')
+    actual_value = data.get('actual_value')
+    reason = data.get('reason')
+    
+    if not prediction_id or actual_value is None:
+        return jsonify({'error': 'prediction_id and actual_value are required'}), 400
+        
+    result = AnalyticsService.record_outcome(prediction_id, actual_value, reason)
+    if not result:
+        return jsonify({'error': 'Prediction not found'}), 404
+        
+    return jsonify(result), 200
+
+
 @ml_bp.route('/<business_id>/model-performance', methods=['GET'])
 @jwt_required()
 def get_model_performance(business_id):
-    """Get ML model performance metrics"""
-    user_id = get_jwt_identity()
-    business = Business.query.filter_by(id=business_id, user_id=user_id).first()
-    
-    if not business:
-        return jsonify({'error': 'Business not found'}), 404
-    
-    performance = MLService.get_model_performance('v1.0')
-    
+    """Get real ML model performance metrics from recorded outcomes"""
+    performance = MLService.get_model_performance('v1.0', business_id=business_id)
     return jsonify(performance), 200
+

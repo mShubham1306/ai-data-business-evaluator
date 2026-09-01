@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { BusinessService, Business } from '../../core/services/business.service';
 import { AuthService, StoredUser } from '../../core/services/auth.service';
 import { CurrencyService } from '../../core/services/currency.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -39,19 +41,29 @@ import { CurrencyService } from '../../core/services/currency.service';
         </div>
       </header>
 
-      <!-- Trust Layer Status Bar -->
+      <!-- Trust Layer Status Bar (dynamic) -->
       <div class="trust-banner">
         <div class="trust-pill verified">
-          <span class="status-dot green"></span> Layer 1: Data Rules Verified
+          <span class="status-dot green"></span>
+          Layer 1: Data Verified
+          <span class="trust-sub" *ngIf="businesses.length > 0">{{ businesses.length }} business{{ businesses.length > 1 ? 'es' : '' }} loaded</span>
         </div>
         <div class="trust-pill confidence">
-          <span class="status-dot blue"></span> Layer 2: ML Model Bounds ±88.4%
+          <span class="status-dot blue"></span>
+          Layer 2: ML Model
+          <span class="trust-sub" *ngIf="modelAccuracy !== null">{{ modelAccuracy }}% accuracy</span>
+          <span class="trust-sub" *ngIf="modelAccuracy === null">Record outcomes to calibrate</span>
         </div>
         <div class="trust-pill llm">
-          <span class="status-dot purple"></span> Layer 3: Gemini 2.5 Copilot Ready
+          <span class="status-dot purple"></span>
+          Layer 3: AI Copilot
+          <span class="trust-sub">Gemini 2.0 Ready</span>
         </div>
         <div class="trust-pill feedback">
-          <span class="status-dot coral"></span> Layer 4: Outcome Retraining Active
+          <span class="status-dot coral"></span>
+          Layer 4: Self-Learning
+          <span class="trust-sub" *ngIf="outcomeCount > 0">{{ outcomeCount }} outcomes recorded</span>
+          <span class="trust-sub" *ngIf="outcomeCount === 0">Submit forecasts to activate</span>
         </div>
       </div>
 
@@ -235,12 +247,13 @@ import { CurrencyService } from '../../core/services/currency.service';
 
     .subtitle { color: var(--slate-gray); font-size: 0.95rem; margin-top: 0.2rem; }
 
-    .trust-banner { display: flex; gap: 1rem; flex-wrap: wrap; background: var(--white); padding: 0.85rem 1.35rem; border-radius: 12px; box-shadow: var(--shadow-3d); border: 1px solid var(--border-color); }
-    .trust-pill { font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 0.55rem; padding: 0.35rem 0.85rem; border-radius: 20px; background: var(--cream); color: var(--deep-navy); border: 1px solid rgba(226, 232, 240, 0.8); }
+    .trust-banner { display: flex; gap: 0.75rem; flex-wrap: wrap; background: var(--white); padding: 0.85rem 1.35rem; border-radius: 12px; box-shadow: var(--shadow-3d); border: 1px solid var(--border-color); }
+    .trust-pill { font-size: 0.8rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0.9rem; border-radius: 20px; background: var(--cream); color: var(--deep-navy); border: 1px solid rgba(226, 232, 240, 0.8); flex-direction: row; flex-wrap: wrap; }
+    .trust-sub { font-size: 0.72rem; font-weight: 400; opacity: 0.8; margin-left: 0.1rem; }
     .trust-pill.verified { background: #f0fdf4; color: #14532d; border-color: rgba(34, 197, 94, 0.3); }
     .trust-pill.confidence { background: #eff6ff; color: #1e40af; border-color: rgba(59, 130, 246, 0.3); }
     .trust-pill.llm { background: #faf5ff; color: #6b21a8; border-color: rgba(139, 92, 246, 0.3); }
-    .trust-pill.coral { background: #fff1f2; color: #9f1239; border-color: rgba(246, 159, 152, 0.4); }
+    .trust-pill.feedback { background: #fff1f2; color: #9f1239; border-color: rgba(246, 159, 152, 0.4); }
 
     .status-dot { width: 9px; height: 9px; border-radius: 50%; }
     .status-dot.green { background: var(--success-green); box-shadow: 0 0 8px var(--success-green); }
@@ -314,8 +327,11 @@ export class DashboardComponent implements OnInit {
   avgHealthScore = 0;
   opportunities = 0;
   currentUser: StoredUser | null = null;
+  modelAccuracy: number | null = null;
+  outcomeCount = 0;
+  private apiUrl = environment.apiUrl;
 
-  selectedCurrency = 'AED';
+  selectedCurrency = 'USD';
 
   newBiz = this.emptyBiz();
 
@@ -330,7 +346,8 @@ export class DashboardComponent implements OnInit {
     private businessService: BusinessService,
     private authService: AuthService,
     public currencyService: CurrencyService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -349,7 +366,7 @@ export class DashboardComponent implements OnInit {
     return {
       name: '',
       industry: '',
-      currency: this.currencyService.currentCurrency || 'AED',
+      currency: this.currencyService.currentCurrency || 'USD',
       size: '',
       description: '',
       target_revenue: null as number | null,
@@ -367,8 +384,23 @@ export class DashboardComponent implements OnInit {
       next: (res) => {
         this.businesses = res.businesses || [];
         this.loading = false;
+        // Load dynamic trust layer data for first business
+        if (this.businesses.length > 0) {
+          this.loadTrustLayerData(this.businesses[0].id);
+        }
       },
       error: () => { this.loading = false; }
+    });
+  }
+
+  loadTrustLayerData(businessId: string): void {
+    // Layer 2: Real model accuracy from recorded outcomes
+    this.http.get<any>(`${this.apiUrl}/ml/${businessId}/model-performance`).subscribe({
+      next: res => {
+        this.modelAccuracy = res.accuracy ?? null;
+        this.outcomeCount = res.predictions_tracked ?? 0;
+      },
+      error: () => {}
     });
   }
 

@@ -14,36 +14,33 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
-    component: AuthComponent
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [authGuard]
+    component: DashboardComponent
   },
   {
     path: 'business',
-    component: BusinessComponent,
-    canActivate: [authGuard]
+    component: BusinessComponent
   },
   {
     path: 'business/:id',
-    component: BusinessComponent,
-    canActivate: [authGuard]
+    component: BusinessComponent
   },
   {
     path: 'analytics/:id',
-    component: AnalyticsComponent,
-    canActivate: [authGuard]
+    component: AnalyticsComponent
   },
   {
     path: 'copilot/:id',
-    component: CopilotComponent,
-    canActivate: [authGuard]
+    component: CopilotComponent
   },
   {
     path: '**',
-    redirectTo: '/'
+    redirectTo: '/dashboard'
   }
 ];
+
 

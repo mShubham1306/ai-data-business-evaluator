@@ -13,17 +13,17 @@ export interface CurrencyOption {
 })
 export class CurrencyService {
   readonly currencies: CurrencyOption[] = [
+    { code: 'USD', name: 'US Dollar', flag: '🇺🇸', symbol: '$' },
+    { code: 'EUR', name: 'Euro', flag: '🇪🇺', symbol: '€' },
+    { code: 'GBP', name: 'British Pound', flag: '🇬🇧', symbol: '£' },
     { code: 'AED', name: 'UAE Dirham', flag: '🇦🇪', symbol: 'AED' },
     { code: 'SAR', name: 'Saudi Riyal', flag: '🇸🇦', symbol: 'SAR' },
     { code: 'QAR', name: 'Qatari Riyal', flag: '🇶🇦', symbol: 'QAR' },
     { code: 'KWD', name: 'Kuwaiti Dinar', flag: '🇰🇼', symbol: 'KWD' },
-    { code: 'USD', name: 'US Dollar', flag: '🇺🇸', symbol: '$' },
-    { code: 'EUR', name: 'Euro', flag: '🇪🇺', symbol: '€' },
     { code: 'INR', name: 'Indian Rupee', flag: '🇮🇳', symbol: '₹' },
-    { code: 'GBP', name: 'British Pound', flag: '🇬🇧', symbol: '£' },
   ];
 
-  private selectedCurrencySubject = new BehaviorSubject<string>(localStorage.getItem('nova_global_currency') || 'AED');
+  private selectedCurrencySubject = new BehaviorSubject<string>(localStorage.getItem('nova_global_currency') || 'USD');
   selectedCurrency$: Observable<string> = this.selectedCurrencySubject.asObservable();
 
   get currentCurrency(): string {

@@ -23,11 +23,11 @@ import { filter } from 'rxjs/operators';
           </div>
         </div>
 
-        <button class="mobile-toggle" *ngIf="isAuthenticated$ | async" (click)="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle navigation">
+        <button class="mobile-toggle" (click)="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
         </button>
 
-        <div class="nav-links" [class.mobile-open]="mobileMenuOpen" *ngIf="isAuthenticated$ | async">
+        <div class="nav-links" [class.mobile-open]="mobileMenuOpen">
           <a routerLink="/dashboard" routerLinkActive="active" (click)="mobileMenuOpen = false">Dashboard</a>
           <a routerLink="/business" routerLinkActive="active" (click)="mobileMenuOpen = false">Business Data</a>
           <a routerLink="/analytics/default" routerLinkActive="active" (click)="mobileMenuOpen = false">Analytics &amp; ML</a>
@@ -48,13 +48,12 @@ import { filter } from 'rxjs/operators';
             <div class="user-avatar">{{ getInitials(currentUser.name) }}</div>
             <div class="user-info">
               <span class="user-name">{{ currentUser.name }}</span>
-              <span class="user-email">{{ currentUser.email }}</span>
+              <span class="user-email">{{ currentUser.company_name || 'GCC SME Enterprise' }}</span>
             </div>
           </div>
-
-          <button (click)="logout(); mobileMenuOpen = false" class="btn-logout">Logout</button>
         </div>
       </nav>
+
 
       <main class="main-content" [class.full-width]="!showNav">
         <router-outlet></router-outlet>
@@ -157,7 +156,7 @@ export class AppComponent implements OnInit {
   currentUser: StoredUser | null = null;
   showNav = true;
   mobileMenuOpen = false;
-  currentCurrency = 'AED';
+  currentCurrency = 'USD';
 
   constructor(
     private authService: AuthService,

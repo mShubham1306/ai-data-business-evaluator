@@ -34,8 +34,8 @@ class DataValidationService:
             date_col = 'date' if 'date' in df.columns else 'period'
             try:
                 pd.to_datetime(df[date_col])
-            except:
-                errors.append(f"Invalid dates in {date_col} column")
+            except Exception as e:
+                errors.append(f"Invalid dates in {date_col} column: {str(e)}")
         
         # Check for duplicates
         duplicates = df.duplicated().sum()
@@ -106,32 +106,94 @@ class DataProcessingService:
         """Process uploaded file"""
         try:
             # Read file based on type
+        # Read file based on type
             if file_type == 'csv':
                 df = pd.read_csv(file_path)
             elif file_type in ['xlsx', 'xls']:
                 df = pd.read_excel(file_path)
             elif file_type == 'pdf':
-                # For PDF, would use PyPDF2 to extract tables
-                import PyPDF2
-                df = None  # Simplified for now
+                df = DataProcessingService.parse_pdf_to_dataframe(file_path, data_type)
             else:
-                return None, ["Unsupported file type"]
-            
+                return None, ["Unsupported file type: " + file_type], [], {}
+
+            if df is None or df.empty:
+                return None, ["Could not extract tabular data from this file. Please check it has readable rows and columns."], [], {}
+
             # Validate
             errors, warnings = DataValidationService.validate_data(df, data_type)
             if errors:
-                return None, errors
-            
+                return None, errors, warnings, {}
+
             # Clean
             df = DataValidationService.clean_data(df)
-            
+
             # Extract features
             features = DataValidationService.extract_features(df, data_type)
-            
+
             return df, errors, warnings, features
-        
+
         except Exception as e:
-            return None, [str(e)]
+            return None, [f"File processing error: {str(e)}"], [], {}
+
+    @staticmethod
+    def parse_pdf_to_dataframe(file_path, data_type):
+        """Parse text and tables from PDF file into structured DataFrame"""
+        import re
+        extracted_text = ""
+        
+        # 1. Try PyPDF2 / pypdf
+        try:
+            try:
+                import pypdf
+                reader = pypdf.PdfReader(file_path)
+                for page in reader.pages:
+                    txt = page.extract_text()
+                    if txt:
+                        extracted_text += txt + "\n"
+            except ImportError:
+                import PyPDF2
+                reader = PyPDF2.PdfReader(file_path)
+                for page in reader.pages:
+                    txt = page.extract_text()
+                    if txt:
+                        extracted_text += txt + "\n"
+        except Exception as e:
+            print(f"[PDF Reader Error]: {e}")
+            
+        rows = []
+        months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec']
+        
+        lines = extracted_text.split('\n')
+        for line in lines:
+            line_clean = line.strip()
+            if not line_clean:
+                continue
+            
+            # Match lines with month/date and numeric amount
+            # e.g., "2024-01, 150000" or "Jan 2024: 120000" or "Month 1 - 45000"
+            numbers = re.findall(r'[\$€£]?\s*([0-9]{1,3}(?:,[0-9]{3})*(?:\.[0-9]+)?)', line_clean)
+            has_month = any(m in line_clean.lower() for m in months) or re.search(r'\d{4}[-/]\d{2}', line_clean) or 'month' in line_clean.lower()
+            
+            if numbers and (has_month or len(numbers) >= 2):
+                # Clean numeric values
+                clean_nums = [float(n.replace(',', '')) for n in numbers if n.replace(',', '').replace('.', '').isdigit()]
+                if clean_nums:
+                    # Find date / period string
+                    period_match = re.search(r'([A-Za-z]{3}\s*\d{2,4}|\d{4}[-/]\d{2}|Month\s*\d+)', line_clean, re.IGNORECASE)
+                    period_str = period_match.group(0) if period_match else f"Period_{len(rows)+1}"
+                    rows.append({'period': period_str, data_type: clean_nums[-1]})
+        
+        # Fallback: if line parsing didn't find rows, extract all numbers sequentially
+        if not rows:
+            all_numbers = re.findall(r'[\$€£]?\s*([0-9]{1,3}(?:,[0-9]{3})+(?:\.[0-9]+)?|[0-9]{4,}(?:\.[0-9]+)?)', extracted_text)
+            clean_nums = [float(n.replace(',', '')) for n in all_numbers if float(n.replace(',', '')) > 0]
+            for idx, num in enumerate(clean_nums[:36]):  # Max 36 periods
+                rows.append({'period': f'Month_{idx+1}', data_type: num})
+                
+        if rows:
+            return pd.DataFrame(rows)
+        return None
+
     
     @staticmethod
     def update_world_model(business_id, data_type, data):

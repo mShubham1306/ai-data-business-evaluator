@@ -21,8 +21,8 @@ import { RouterLink } from '@angular/router';
             <a href="#features" class="land-nav-link">Features</a>
             <a href="#how-it-works" class="land-nav-link">How It Works</a>
             <a href="#stats" class="land-nav-link">Results</a>
-            <a routerLink="/auth" class="land-signin-btn">Sign In</a>
-            <a routerLink="/auth" class="land-cta-btn">Get Started Free →</a>
+            <a routerLink="/dashboard" class="land-signin-btn">Sign In</a>
+            <a routerLink="/dashboard" class="land-cta-btn">Get Started Free →</a>
           </div>
         </div>
       </nav>
@@ -54,7 +54,7 @@ import { RouterLink } from '@angular/router';
           </p>
 
           <div class="hero-actions">
-            <a routerLink="/auth" class="btn-hero-primary">
+            <a routerLink="/dashboard" class="btn-hero-primary">
               <span>🚀 Start Free Analysis</span>
             </a>
             <a href="#how-it-works" class="btn-hero-secondary">
@@ -96,7 +96,7 @@ import { RouterLink } from '@angular/router';
                 </div>
                 <div class="mock-stat">
                   <div class="mock-stat-label">Forecast Revenue</div>
-                  <div class="mock-stat-value" style="color:#5EE1F1">AED 4.2M</div>
+                  <div class="mock-stat-value" style="color:#5EE1F1">$4.2M</div>
                   <div class="mock-stat-sub">+18% YoY</div>
                 </div>
                 <div class="mock-stat">
@@ -116,7 +116,7 @@ import { RouterLink } from '@angular/router';
               </div>
               <div class="mock-ai-msg">
                 <span class="mock-ai-icon">🤖</span>
-                <span>NOVA: Your ERP line has 65% margin. Reallocating AED 10K budget yields +AED 48K net profit...</span>
+                <span>NOVA: Your ERP line has 65% margin. Reallocating $10K budget yields +$48K net profit...</span>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ import { RouterLink } from '@angular/router';
             <div class="section-badge">4-Layer Verification</div>
             <h2 class="section-title">Built on Trust.<br/><span class="gradient-text">Verified at Every Layer.</span></h2>
             <p class="section-sub">Unlike other AI tools that produce hallucinated numbers, NOVA verifies every output through a rigorous 4-layer trust architecture before showing you results.</p>
-            <a routerLink="/auth" class="btn-hero-primary mt-4" style="display:inline-flex">Start Building Trust →</a>
+            <a routerLink="/dashboard" class="btn-hero-primary mt-4" style="display:inline-flex">Start Building Trust →</a>
           </div>
           <div class="trust-layers">
             <div class="trust-layer-card" *ngFor="let layer of trustLayers">
@@ -201,10 +201,10 @@ import { RouterLink } from '@angular/router';
           <h2 class="cta-title">Ready to Unlock Your Business Potential?</h2>
           <p class="cta-sub">Join hundreds of UAE & GCC SMEs making smarter decisions with NOVA AI. Set up your first business profile in under 5 minutes.</p>
           <div class="cta-actions">
-            <a routerLink="/auth" class="btn-hero-primary">
+            <a routerLink="/dashboard" class="btn-hero-primary">
               🚀 Create Free Account
             </a>
-            <a routerLink="/auth" class="btn-hero-ghost">
+            <a routerLink="/dashboard" class="btn-hero-ghost">
               Sign In to Existing Account
             </a>
           </div>

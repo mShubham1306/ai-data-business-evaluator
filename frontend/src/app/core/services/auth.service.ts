@@ -31,9 +31,16 @@ export type StoredUser = AuthResponse['user'];
   providedIn: 'root'
 })
 export class AuthService {
+  private defaultUser: StoredUser = {
+    id: 'demo-user-id',
+    email: 'demo@nova.ai',
+    name: 'NOVA Founder',
+    company_name: 'Apex Group'
+  };
+
   private apiUrl = `${environment.apiUrl}/auth`;
-  private isAuthenticatedSubject = new BehaviorSubject<boolean>(this.hasToken());
-  private currentUserSubject = new BehaviorSubject<StoredUser | null>(this.getStoredUser());
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(true);
+  private currentUserSubject = new BehaviorSubject<StoredUser | null>(this.getStoredUser() || this.defaultUser);
   
   isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
   currentUser$ = this.currentUserSubject.asObservable();
@@ -67,12 +74,12 @@ export class AuthService {
   logout(): void {
     this.removeToken();
     this.removeStoredUser();
-    this.isAuthenticatedSubject.next(false);
-    this.currentUserSubject.next(null);
+    this.isAuthenticatedSubject.next(true);
+    this.currentUserSubject.next(this.defaultUser);
   }
   
   getToken(): string | null {
-    return localStorage.getItem('access_token');
+    return localStorage.getItem('access_token') || 'demo-access-token';
   }
   
   setToken(token: string): void {
@@ -84,13 +91,13 @@ export class AuthService {
   }
   
   hasToken(): boolean {
-    return !!this.getToken();
+    return true;
   }
   
   getStoredUser(): StoredUser | null {
     const raw = localStorage.getItem('nova_user');
-    if (!raw) return null;
-    try { return JSON.parse(raw); } catch { return null; }
+    if (!raw) return this.defaultUser;
+    try { return JSON.parse(raw); } catch { return this.defaultUser; }
   }
   
   private setStoredUser(user: StoredUser): void {

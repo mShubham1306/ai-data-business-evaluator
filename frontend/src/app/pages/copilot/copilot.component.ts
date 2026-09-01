@@ -63,17 +63,24 @@ interface ChatMessage {
           <div class="chat-messages">
             <div class="msg-bubble" *ngFor="let m of messages" [class.user]="m.sender === 'user'" [class.nova]="m.sender === 'nova'">
               <div class="msg-header">
-                <strong *ngIf="m.sender === 'nova'">🤖 NOVA Copilot</strong>
-                <strong *ngIf="m.sender === 'user'">👤 {{ currentUser?.name || 'You' }}</strong>
-                <span class="time">{{ m.timestamp | date:'shortTime' }}</span>
+                <div class="header-left">
+                  <strong *ngIf="m.sender === 'nova'">🤖 NOVA Copilot</strong>
+                  <strong *ngIf="m.sender === 'user'">👤 {{ currentUser?.name || 'You' }}</strong>
+                  <span class="time">{{ m.timestamp | date:'shortTime' }}</span>
+                </div>
+                <button *ngIf="m.sender === 'nova'" (click)="speakText(m.text)" class="btn-speak-icon" title="Listen to AI Audio">🔊 Speak</button>
               </div>
               <p class="msg-text">{{ m.text }}</p>
             </div>
           </div>
 
+
           <!-- Chat Input -->
           <div class="chat-input-row mt-3">
-            <input type="text" [(ngModel)]="userQuery" (keyup.enter)="sendMessage()" placeholder="Type any business question here..." class="chat-input" />
+            <button type="button" class="btn btn-secondary voice-btn" (click)="toggleVoiceInput()" [class.listening]="isListening" title="Voice Input">
+              {{ isListening ? '🔴 Listening...' : '🎙️ Voice' }}
+            </button>
+            <input type="text" [(ngModel)]="userQuery" (keyup.enter)="sendMessage()" placeholder="Type or speak any business question here..." class="chat-input" />
             <button class="btn btn-primary" [disabled]="sending" (click)="sendMessage()">
               <span *ngIf="!sending">Send Message</span>
               <span *ngIf="sending">Thinking...</span>
@@ -81,6 +88,7 @@ interface ChatMessage {
           </div>
         </div>
       </div>
+
 
       <!-- SECTION 2: GROWTH OPPORTUNITIES -->
       <div *ngIf="activeSection === 'opportunities'">
@@ -97,7 +105,7 @@ interface ChatMessage {
             <div class="opp-card 3d-mini" *ngFor="let o of opportunities">
               <div class="opp-header">
                 <strong>{{ o.title }}</strong>
-                <span class="impact-tag">+{{ business.currency || 'AED' }} {{ o.estimated_impact | number:'1.0-0' }}</span>
+                <span class="impact-tag">+{{ business.currency || 'USD' }} {{ o.estimated_impact | number:'1.0-0' }}</span>
               </div>
               <p class="opp-desc">{{ o.description }}</p>
               <div class="opp-footer">
@@ -299,7 +307,7 @@ export class CopilotComponent implements OnInit {
         this.sending = false;
       },
       error: () => {
-        const cur = this.business?.currency || 'AED';
+        const cur = this.business?.currency || 'USD';
         this.messages.push({
           sender: 'nova',
           text: `📊 Here is the business summary for ${this.business?.name}:\n\n` +
@@ -323,7 +331,7 @@ export class CopilotComponent implements OnInit {
     this.generatingAction = true;
     setTimeout(() => {
       this.generatingAction = false;
-      const cur = this.business?.currency || 'AED';
+      const cur = this.business?.currency || 'USD';
       if (this.actionType === 'campaign') {
         this.generatedAsset = {
           type: 'campaign',
@@ -351,4 +359,69 @@ export class CopilotComponent implements OnInit {
       this.generatedAsset.status = 'approved';
     }
   }
+
+  isListening = false;
+  private recognition: any = null;
+
+  toggleVoiceInput(): void {
+    const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+    if (!SpeechRecognition) {
+      alert('Speech Recognition is not supported in this browser. Please use Google Chrome or Microsoft Edge.');
+      return;
+    }
+
+    if (this.isListening) {
+      if (this.recognition) this.recognition.stop();
+      this.isListening = false;
+      return;
+    }
+
+    try {
+      this.recognition = new SpeechRecognition();
+      this.recognition.continuous = false;
+      this.recognition.interimResults = false;
+      this.recognition.lang = 'en-US';
+
+      this.recognition.onstart = () => {
+        this.isListening = true;
+      };
+
+      this.recognition.onresult = (event: any) => {
+        const transcript = event.results[0][0].transcript;
+        if (transcript) {
+          this.userQuery = transcript;
+          this.sendMessage();
+        }
+        this.isListening = false;
+      };
+
+      this.recognition.onerror = (err: any) => {
+        console.error('Speech recognition error:', err);
+        this.isListening = false;
+      };
+
+      this.recognition.onend = () => {
+        this.isListening = false;
+      };
+
+      this.recognition.start();
+    } catch (e) {
+      console.error(e);
+      this.isListening = false;
+    }
+  }
+
+  speakText(text: string): void {
+    if (!('speechSynthesis' in window)) {
+      alert('Text-to-speech is not supported in your browser.');
+      return;
+    }
+    window.speechSynthesis.cancel(); // Stop any active speech
+    const cleanText = text.replace(/[*_#`~]/g, ''); // Strip markdown
+    const utterance = new SpeechSynthesisUtterance(cleanText);
+    utterance.rate = 1.0;
+    utterance.pitch = 1.0;
+    window.speechSynthesis.speak(utterance);
+  }
+
 }
